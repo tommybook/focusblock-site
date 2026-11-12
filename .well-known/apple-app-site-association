@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["SF8UX5AGPB.ru.focusblock.app"],
+        "components": [{ "/": "/b/*", "comment": "Ссылка, записанная в метку Focus Block" }]
+      }
+    ]
+  }
+}
