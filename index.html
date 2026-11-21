@@ -3,32 +3,116 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Focus Block — выключатель бессмысленного скроллинга</title>
-<meta name="description" content="Блок на холодильнике и приложение для iPhone: приложили телефон — отвлекающие приложения заблокированы, пока не вернётесь к блоку.">
+<title>Focus Block — ваш фокус. Ваши правила.</title>
+<meta name="description" content="Физический NFC-блок и приложение для iPhone. Выберите, что вас отвлекает, и возвращайтесь к приложениям только у блока.">
 <meta name="theme-color" content="#0b0c0e">
 <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header class="top wrap"><a href="/"><img src="/img/logo.svg" alt="Focus Block"></a></header>
-<main class="wrap">
-  <section class="hero">
-    <h1>Выключатель бессмысленного скроллинга</h1>
-    <p class="lead">Приложили iPhone к блоку — и выбранные приложения заблокированы. Вернуть их можно, только физически дойдя до блока.</p>
-    <img class="block" src="/img/block.jpg" width="1080" height="760" alt="Focus Block — графитовый блок с белой круглой кнопкой">
+<header class="site-header wrap">
+  <a class="brand" href="/" aria-label="Focus Block — главная"><img src="/img/logo.svg" alt="Focus Block"></a>
+  <nav class="header-nav" aria-label="Навигация по странице">
+    <a href="#how">Как работает</a>
+    <a href="#details">О блоке</a>
+  </nav>
+  <span class="header-status"><span class="status-dot" aria-hidden="true"></span> Скоро в продаже</span>
+</header>
+<main>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Маленький ритуал. Большая пауза.</p>
+      <h1 id="hero-title">Ваш фокус.<br><em>Ваши правила.</em></h1>
+      <p class="lead">Focus Block — физический NFC-блок и приложение для iPhone. Выберите, что отвлекает, и одним касанием попросите iOS поставить это на паузу.</p>
+      <div class="orders" aria-label="Заказ пока недоступен">
+        <button class="order-button order-primary" type="button" disabled aria-describedby="order-note"><span>Заказать на Ozon</span><span class="soon">Скоро</span></button>
+        <button class="order-button order-secondary" type="button" disabled aria-describedby="order-note"><span>Заказать напрямую — −10%</span><span class="soon">Скоро</span></button>
+      </div>
+      <p class="order-note" id="order-note">Продажи ещё не начались</p>
+    </div>
+    <div class="product-stage" aria-label="Focus Block — компактный графитовый NFC-блок">
+      <span class="stage-index">FB—01 <i></i> NFC OBJECT</span>
+      <img class="product-image" src="/img/block.jpg" width="1080" height="760" alt="Плоский скруглённый графитовый блок со светлой круглой вставкой и рифлёным боком">
+      <span class="stage-caption"><span>Без батареек</span><span>Всегда под рукой</span></span>
+    </div>
+    <a class="scroll-cue" href="#how" aria-label="Прокрутить к разделу «Как это работает»"><span></span></a>
   </section>
-  <h2>Как это работает</h2>
-  <ol class="steps">
-    <li><b>Повесьте блок</b> подальше от дивана — на холодильник или на стену с помощью стальной пластины из комплекта.</li>
-    <li><b>Выберите в приложении</b>, что вас отвлекает: соцсети, видео, игры.</li>
-    <li><b>Приложите телефон к блоку</b> — отвлекающие приложения закрыты. Чтобы их вернуть, придётся снова дойти до блока.</li>
-  </ol>
-  <h2>Без подписок и батареек</h2>
-  <p>Блок работает без электроники и зарядки: внутри — NFC-метка. Приложение бесплатное, работает на iPhone и ничего не отправляет на серверы. Блокировку делает сама iOS через Экранное время.</p>
-  <div class="card center">
-    <p style="margin:0;color:var(--primary);font-size:20px">Скоро на Ozon и в App Store</p>
-  </div>
+
+  <section class="manifesto" aria-label="Идея Focus Block">
+    <div class="manifesto-inner wrap">
+      <span class="manifesto-index">01 / ИДЕЯ</span>
+      <p>Не нужно бороться с телефоном.<br><em>Достаточно отложить его.</em></p>
+      <span class="manifesto-note">Блокировка включается средствами iOS —<br>а не самим блоком.</span>
+    </div>
+  </section>
+
+  <section class="how-section" id="how" aria-labelledby="how-title">
+    <div class="wrap section-inner">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / ТРИ ПРОСТЫХ ШАГА</p><h2 id="how-title">Касание —<br>и можно заняться своим.</h2></div>
+        <p class="section-aside">Вы сами выбираете,<br>когда начинается пауза<br>и когда она заканчивается.</p>
+      </div>
+      <ol class="steps">
+        <li class="step-card"><span class="step-number">01</span><span class="step-rule" aria-hidden="true"></span><h3>Выберите своё</h3><p>Отметьте приложения, категории или сайты, которые отвлекают.</p></li>
+        <li class="step-card"><span class="step-number">02</span><span class="step-rule" aria-hidden="true"></span><h3>Коснитесь блоком</h3><p>Приложите iPhone к Focus Block. Ограничения включит «Экранное время» iOS.</p></li>
+        <li class="step-card"><span class="step-number">03</span><span class="step-rule" aria-hidden="true"></span><h3>Вернитесь к нему</h3><p>Чтобы снова открыть выбранное, подойдите и приложите телефон ещё раз.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="details wrap" id="details" aria-labelledby="details-title">
+    <div class="details-intro">
+      <p class="eyebrow">03 / ПРОДУМАН В ДЕТАЛЯХ</p>
+      <h2 id="details-title">Никаких проводов.<br>Только намерение.</h2>
+      <p>Внутри — NFC-метка и магниты. Закрепите блок на холодильнике или стальной пластине. Он пассивный: батарейки и зарядка не нужны.</p>
+      <div class="detail-spec"><span class="spec-ring" aria-hidden="true"></span><span>ГРАФИТ · NFC · МАГНИТНОЕ КРЕПЛЕНИЕ</span></div>
+    </div>
+    <ul class="feature-list">
+      <li><span class="feature-mark">A</span><span><strong>Ваши правила — в iPhone</strong><small>Выбранное ограничивает системная функция «Экранное время».</small></span><span class="feature-arrow" aria-hidden="true">↗</span></li>
+      <li><span class="feature-mark">B</span><span><strong>Режим под момент</strong><small>Создайте разные режимы — например, для работы и вечера.</small></span><span class="feature-arrow" aria-hidden="true">↗</span></li>
+      <li><span class="feature-mark">C</span><span><strong>Если понадобится срочно</strong><small>В приложении предусмотрена экстренная разблокировка.</small></span><span class="feature-arrow" aria-hidden="true">↗</span></li>
+    </ul>
+  </section>
+
+  <section class="closing wrap" aria-label="Focus Block скоро в продаже">
+    <div class="closing-mark" aria-hidden="true"><img src="/img/mark.svg" alt=""></div>
+    <p class="eyebrow">ПАУЗА — ТОЖЕ ВЫБОР</p>
+    <p class="closing-title">Оставьте место<br><em>для важного.</em></p>
+    <span class="closing-soon"><span class="status-dot" aria-hidden="true"></span> Focus Block скоро в продаже</span>
+  </section>
 </main>
-<footer class="wrap"><a href="/support/">Поддержка</a><a href="/privacy/">Конфиденциальность</a><p class="small">© 2026 Focus Block</p></footer>
-</body></html>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="/" aria-label="Focus Block — главная"><img src="/img/mark.svg" alt=""></a>
+    <span class="footer-wordmark">FOCUS BLOCK</span>
+    <a href="/support/">Поддержка</a>
+    <a href="/privacy/">Конфиденциальность</a>
+    <a href="mailto:focusblock@yandex.ru">focusblock@yandex.ru</a>
+    <span class="copyright">© 2026</span>
+  </div>
+</footer>
+<script>
+  (() => {
+    const block = document.querySelector(".product-image");
+    const stage = document.querySelector(".product-stage");
+    if (!block || !stage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let frame = 0;
+    const updateRotation = () => {
+      frame = 0;
+      const bounds = stage.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+      block.style.setProperty("--scroll-rotation", `${(progress - 0.5) * 16}deg`);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateRotation);
+    };
+
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
+    updateRotation();
+  })();
+</script>
+</body>
+</html>
