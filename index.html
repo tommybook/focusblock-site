@@ -22,7 +22,7 @@
   </a>
   <nav class="header-nav" aria-label="Навигация">
     <a href="#how">Как работает</a>
-    <a href="#why">Почему физический</a>
+    <a href="#why">Сравнение</a>
     <a href="#box">Комплект</a>
     <a href="#faq">Вопросы</a>
   </nav>
@@ -30,7 +30,7 @@
 </header>
 
 <main>
-  <!-- Chapter 1: Hero (Obsidian) -->
+  <!-- Hero: Form on left, borderless Focus Block directly to the right -->
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
       <div class="hero-status">
@@ -58,65 +58,62 @@
       </div>
 
       <div class="hero-meta">
-        <span>Без подписок и&nbsp;батареек</span>
-        <a href="https://t.me/focusblock" target="_blank" rel="noopener">Следить за&nbsp;тиражом в&nbsp;Telegram</a>
+        <span>Без подписок, батареек и&nbsp;зарядки — для iPhone на&nbsp;iOS 17 и&nbsp;новее</span>
       </div>
     </div>
 
     <div class="hero-stage" aria-label="Focus Block — графитовый физический блок">
       <img class="hero-product-img" src="/img/block.jpg" width="1080" height="760" fetchpriority="high" alt="Focus Block — компактный графитовый блок со светлой круглой вставкой и рифлёным боком">
-      <div class="hero-stage-caption">
-        <span>Работает без зарядки</span>
-        <span>Для iPhone на&nbsp;iOS 17 и&nbsp;новее</span>
-      </div>
     </div>
   </section>
 
-  <!-- Chapter 2: Interactive Touch Demo (Warm Paper) -->
-  <section class="chapter-paper" id="how" aria-labelledby="how-title">
-    <div class="wrap demo-layout">
-      <div class="demo-copy">
-        <h2 id="how-title">Одно касание — и&nbsp;телефон снова инструмент</h2>
-        <p class="demo-copy-lead">Выберите в&nbsp;приложении то, что забирает внимание, и&nbsp;повесьте блок подальше от&nbsp;рабочего стола или дивана.</p>
+  <!-- Scroll-Driven Animation: Dark iPhone taps Focus Block and locks apps -->
+  <section class="scroll-story" id="how" aria-labelledby="how-title">
+    <div class="scroll-sticky">
+      <div class="wrap scroll-grid">
+        <div class="scroll-copy">
+          <h2 id="how-title">Одно касание — и&nbsp;телефон снова инструмент</h2>
+          <p class="scroll-lead" id="storyLead">Выберите в&nbsp;приложении то, что забирает внимание, и&nbsp;повесьте блок подальше от&nbsp;рабочего стола или дивана.</p>
 
-        <ul class="demo-points">
-          <li>
-            <strong>Соцсети и&nbsp;ленты закрываются сразу</strong>
-            <span>Поднесите верхний край iPhone к&nbsp;блоку — рилсы, видео и&nbsp;игры уходят на&nbsp;паузу.</span>
-          </li>
-          <li>
-            <strong>Важное остаётся на&nbsp;связи</strong>
-            <span>Звонки, сообщения, карты, такси и&nbsp;банковские приложения продолжают работать как обычно.</span>
-          </li>
-          <li>
-            <strong>Чтобы открыть, нужно встать</strong>
-            <span>Физическая дистанция до&nbsp;блока на&nbsp;холодильнике или в&nbsp;прихожей обрывает привычку тянуться к&nbsp;экрану.</span>
-          </li>
-        </ul>
-      </div>
+          <ul class="scroll-steps">
+            <li class="scroll-step is-active" data-step="0">
+              <strong>Подносите iPhone к&nbsp;блоку</strong>
+              <span>Рилсы, видео, ленты и&nbsp;игры готовы уйти на&nbsp;паузу одним движением.</span>
+            </li>
+            <li class="scroll-step" data-step="1">
+              <strong>Касание — и&nbsp;лишнее закрыто</strong>
+              <span>Отвлекающие приложения мгновенно блокируются. Звонки, карты и&nbsp;банки остаются открытыми.</span>
+            </li>
+            <li class="scroll-step" data-step="2">
+              <strong>Чтобы открыть, нужно встать</strong>
+              <span>Пока вы идёте к&nbsp;блоку на&nbsp;холодильнике, импульс полистать ленту проходит сам.</span>
+            </li>
+          </ul>
+        </div>
 
-      <div class="touch-stage" id="touchStage" onclick="handleStageClick(event)" aria-label="Интерактивная демонстрация: телефон подносят к блоку и отвлекающие приложения блокируются">
-        <div class="touch-canvas">
-          <div class="wall-block">
-            <div class="wall-block-inlay"></div>
-            <span class="wall-block-caption">Focus Block</span>
+        <div class="scroll-stage" id="scrollStage" aria-label="Анимация при прокрутке: тёмный iPhone прикладывается к Focus Block и отвлекающие приложения блокируются">
+          <div class="story-block">
+            <img src="/img/block.jpg" width="1080" height="760" alt="Focus Block" class="story-block-img">
           </div>
 
-          <div class="touch-wave" aria-hidden="true"></div>
+          <div class="story-wave" id="storyWave" aria-hidden="true"></div>
 
-          <div class="handset">
-            <div class="handset-island" aria-hidden="true"></div>
-            <div class="handset-bar num">
-              <span>14:20</span>
-              <span>iPhone</span>
-            </div>
-
-            <div class="handset-body">
-              <div class="handset-banner" id="handsetBanner">Обычный режим</div>
+          <div class="story-iphone" id="storyIphone">
+            <div class="iphone-frame">
+              <div class="iphone-top">
+                <div class="iphone-island" aria-hidden="true">
+                  <span class="island-dot" aria-hidden="true"></span>
+                </div>
+                <div class="iphone-statusbar num">
+                  <span>14:20</span>
+                  <span>5G</span>
+                </div>
+                <div class="iphone-status-pill" id="iphoneStatusPill">Обычный режим</div>
+              </div>
 
               <div>
-                <div class="handset-group-title">Отвлекающее</div>
-                <div class="handset-apps">
+                <div class="iphone-apps-heading">Отвлекающее</div>
+                <div class="iphone-apps">
                   <div class="app-cell">
                     <span class="app-dot" aria-hidden="true"></span>
                     <div class="app-glyph glyph-reels" aria-hidden="true">
@@ -163,7 +160,7 @@
               </div>
 
               <div>
-                <div class="handset-dock">
+                <div class="iphone-dock">
                   <div class="dock-glyph dock-phone" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                   </div>
@@ -174,93 +171,96 @@
                     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
                   </div>
                 </div>
-                <div class="handset-dock-label">Звонки, карты и&nbsp;банки остаются открытыми</div>
+                <div class="iphone-dock-label">Звонки, карты и&nbsp;банки остаются открытыми</div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="touch-bar">
-          <span class="touch-status" id="touchStatus">Приложите телефон к&nbsp;блоку</span>
-          <div class="touch-actions">
-            <button type="button" class="touch-btn touch-btn-primary" id="touchTriggerBtn" onclick="triggerTouchDemo(event)">Приложить телефон</button>
-            <button type="button" class="touch-btn" id="touchPauseBtn" onclick="toggleTouchPause(event)" aria-pressed="false">Пауза</button>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapter 3: Why Physical & No Subscriptions (Obsidian) -->
-  <section class="chapter-dark" id="why" aria-labelledby="why-title">
+  <!-- Chapter: Why Focus Block is better than regular apps (Warm Paper) -->
+  <section class="chapter-paper" id="why" aria-labelledby="why-title">
     <div class="wrap">
-      <div class="editorial-split">
-        <div class="editorial-lead">
-          <h2 id="why-title">Почему экранные таймеры не&nbsp;держат</h2>
-          <p>Когда запрет и&nbsp;искушение живут на&nbsp;одном экране, привычка всегда побеждает за&nbsp;две секунды.</p>
-        </div>
-
-        <div class="argument-list">
-          <div class="argument-row">
-            <h3>Автоматический заход</h3>
-            <p>Вы открываете телефон на&nbsp;минуту посмотреть сообщение по&nbsp;работе, а&nbsp;через полчаса ловите себя в&nbsp;ленте коротких видео. Привычка срабатывает раньше осознанности.</p>
-          </div>
-
-          <div class="argument-row">
-            <h3>Лимиты в&nbsp;телефоне</h3>
-            <p>Системное ограничение легко смахнуть машинально: палец сам нажимает «Игнорировать 15&nbsp;минут», потому что смартфон уже в&nbsp;руках.</p>
-          </div>
-
-          <div class="argument-row accent-row">
-            <h3>Физическая дистанция</h3>
-            <p>Focus Block выносит переключатель в&nbsp;другую комнату. Чтобы снова открыть соцсети, нужно встать и&nbsp;дойти до&nbsp;блока. Пока вы собираетесь встать, импульс проходит.</p>
-          </div>
-        </div>
+      <div class="table-head">
+        <h2 id="why-title">Почему Focus Block лучше обычных приложений</h2>
+        <p>Когда запрет и&nbsp;искушение живут на&nbsp;одном экране, привычка всегда побеждает за&nbsp;две секунды.</p>
       </div>
 
-      <div class="economics-block" id="pricing">
-        <div class="economics-head">
-          <h2>Купили один раз — никаких подписок</h2>
-          <p>Приложения для фокуса берут регулярную плату за&nbsp;кнопку, которую легко отключить с&nbsp;дивана.</p>
-        </div>
-
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Параметр</th>
-              <th>Приложения по&nbsp;подписке</th>
-              <th class="col-focusblock">Focus Block</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Стоимость</td>
-              <td class="num">3&nbsp;000–7&nbsp;000&nbsp;₽ каждый год</td>
-              <td class="col-focusblock num">0&nbsp;₽ подписок навсегда</td>
-            </tr>
-            <tr>
-              <td>Как работает барьер</td>
-              <td>Отключается за&nbsp;два нажатия в&nbsp;телефоне</td>
-              <td>Нужно физически подойти к&nbsp;блоку</td>
-            </tr>
-            <tr>
-              <td>Зарядка и&nbsp;уход</td>
-              <td>Зависит от&nbsp;аккаунта и&nbsp;оплаты</td>
-              <td>Без батареек и&nbsp;проводов — работает всегда</td>
-            </tr>
-            <tr>
-              <td>Приватность</td>
-              <td>Регистрация и&nbsp;статистика на&nbsp;серверах</td>
-              <td>Никаких аккаунтов, всё хранится только на&nbsp;iPhone</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Что происходит</th>
+            <th>Обычные приложения и&nbsp;таймеры</th>
+            <th class="col-focusblock">Focus Block</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Когда тянет полистать</td>
+            <td>Палец машинально жмёт «Игнорировать 15&nbsp;минут», не&nbsp;вставая с&nbsp;дивана</td>
+            <td>Нужно встать и&nbsp;подойти к&nbsp;блоку в&nbsp;другой комнате — импульс проходит по&nbsp;пути</td>
+          </tr>
+          <tr>
+            <td>Сила воли</td>
+            <td>Приходится каждый раз уговаривать себя закрыть ленту</td>
+            <td>Привычка тянуться к&nbsp;экрану обрывается физическим барьером</td>
+          </tr>
+          <tr>
+            <td>Обход ограничения</td>
+            <td>Легко отключить или продлить лимит за&nbsp;два нажатия в&nbsp;телефоне</td>
+            <td>Выключатель вынесен наружу — случайно не&nbsp;нажмёшь</td>
+          </tr>
+          <tr>
+            <td>Срочные дела</td>
+            <td>Либо постоянные поблажки, либо неудобный полный запрет</td>
+            <td>Звонки, карты и&nbsp;банки работают; на&nbsp;форс-мажор есть экстренная разблокировка</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- Chapter 4: In The Box (Warm Paper) -->
-  <section class="chapter-paper" id="box" aria-labelledby="box-title">
+  <!-- Chapter: Bought once and no subscriptions (Obsidian) -->
+  <section class="chapter-dark" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="table-head">
+        <h2 id="pricing-title">Купили один раз и&nbsp;никаких подписок</h2>
+        <p>Приложения для фокуса берут регулярную плату за&nbsp;кнопку, которую легко отключить с&nbsp;дивана.</p>
+      </div>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Приложения по&nbsp;подписке</th>
+            <th class="col-focusblock">Focus Block</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стоимость</td>
+            <td class="num">3&nbsp;000–7&nbsp;000&nbsp;₽ каждый год</td>
+            <td class="col-focusblock num">0&nbsp;₽ подписок навсегда</td>
+          </tr>
+          <tr>
+            <td>Зарядка и&nbsp;уход</td>
+            <td>Зависит от&nbsp;аккаунта и&nbsp;оплаты</td>
+            <td>Без батареек и&nbsp;проводов — работает всегда</td>
+          </tr>
+          <tr>
+            <td>Приватность</td>
+            <td>Регистрация и&nbsp;статистика на&nbsp;серверах</td>
+            <td>Никаких аккаунтов, всё хранится только на&nbsp;iPhone</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Chapter: In The Box (Obsidian — borderless Focus Block photo) -->
+  <section class="chapter-dark" id="box" aria-labelledby="box-title">
     <div class="wrap box-grid">
       <div class="box-media">
         <img src="/img/block.jpg" width="1080" height="760" loading="lazy" alt="Focus Block — графитовый блок в комплекте со стальной пластиной">
@@ -292,8 +292,8 @@
     </div>
   </section>
 
-  <!-- Chapter 5: FAQ (Obsidian) -->
-  <section class="chapter-dark" id="faq" aria-labelledby="faq-title">
+  <!-- Chapter: FAQ (Warm Paper) -->
+  <section class="chapter-paper" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-layout">
       <div class="faq-side">
         <h2 id="faq-title">Частые вопросы</h2>
@@ -354,7 +354,7 @@
     </div>
   </section>
 
-  <!-- Chapter 6: Closing Pre-order (Obsidian) -->
+  <!-- Closing Pre-order (Obsidian) -->
   <section class="closing-section" aria-labelledby="closing-title">
     <div class="closing-ring" aria-hidden="true"></div>
     <div class="wrap closing-inner">
@@ -397,7 +397,6 @@
     <div class="footer-links">
       <a href="/support/">Поддержка</a>
       <a href="/privacy/">Конфиденциальность</a>
-      <a href="https://t.me/focusblock" target="_blank" rel="noopener">Telegram</a>
       <a href="mailto:focusblock@yandex.ru">focusblock@yandex.ru</a>
     </div>
     <span>© 2026 Focus Block</span>
@@ -405,7 +404,7 @@
 </footer>
 
 <script>
-  // Subtle scroll rotation on real product photo in Hero
+  // Subtle scroll rotation on Hero Focus Block
   (() => {
     const img = document.querySelector(".hero-product-img");
     const stage = document.querySelector(".hero-stage");
@@ -426,91 +425,77 @@
     update();
   })();
 
-  // Interactive Phone-to-Block Touch Animation
-  let demoLocked = false;
-  let demoPaused = false;
-  let demoBusy = false;
-  let demoTimer = null;
+  // Scroll-Driven Dark iPhone -> Focus Block Touch Choreography
+  (() => {
+    const track = document.querySelector(".scroll-story");
+    const stage = document.getElementById("scrollStage");
+    const phone = document.getElementById("storyIphone");
+    const pill = document.getElementById("iphoneStatusPill");
+    const steps = Array.from(document.querySelectorAll(".scroll-step"));
+    if (!track || !stage || !phone) return;
 
-  const touchStage = document.getElementById("touchStage");
-  const handsetBanner = document.getElementById("handsetBanner");
-  const touchStatus = document.getElementById("touchStatus");
-  const touchTriggerBtn = document.getElementById("touchTriggerBtn");
-  const touchPauseBtn = document.getElementById("touchPauseBtn");
-
-  function runTouchDemo() {
-    if (!touchStage || demoBusy) return;
-    demoBusy = true;
-
-    if (!demoLocked) {
-      touchStage.classList.add("is-touching");
-      if (touchStatus) touchStatus.textContent = "Касание блока…";
-
-      setTimeout(() => {
-        demoLocked = true;
-        touchStage.classList.add("is-locked");
-        if (handsetBanner) handsetBanner.textContent = "Фокус включён";
-        if (touchStatus) touchStatus.textContent = "Лишние приложения закрыты до следующего касания";
-        if (touchTriggerBtn) touchTriggerBtn.textContent = "Снять паузу";
-      }, 550);
-
-      setTimeout(() => {
-        touchStage.classList.remove("is-touching");
-        demoBusy = false;
-      }, 1150);
-    } else {
-      touchStage.classList.add("is-touching");
-      if (touchStatus) touchStatus.textContent = "Подносим телефон к блоку…";
-
-      setTimeout(() => {
-        demoLocked = false;
-        touchStage.classList.remove("is-locked");
-        if (handsetBanner) handsetBanner.textContent = "Обычный режим";
-        if (touchStatus) touchStatus.textContent = "Приложения снова открыты";
-        if (touchTriggerBtn) touchTriggerBtn.textContent = "Приложить телефон";
-      }, 550);
-
-      setTimeout(() => {
-        touchStage.classList.remove("is-touching");
-        demoBusy = false;
-      }, 1150);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      stage.classList.add("is-locked");
+      if (pill) pill.textContent = "Фокус включён";
+      return;
     }
-  }
 
-  function scheduleDemoLoop() {
-    clearInterval(demoTimer);
-    if (!demoPaused && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      demoTimer = setInterval(runTouchDemo, 6000);
-    }
-  }
+    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    let wasLocked = false;
+    let raf = 0;
 
-  function triggerTouchDemo(e) {
-    if (e) e.stopPropagation();
-    runTouchDemo();
-    scheduleDemoLoop();
-  }
+    const render = () => {
+      raf = 0;
+      const rect = track.getBoundingClientRect();
+      const total = Math.max(1, track.offsetHeight - window.innerHeight);
+      const p = Math.max(0, Math.min(1, -rect.top / total));
 
-  function handleStageClick(e) {
-    if (e.target.closest("button")) return;
-    runTouchDemo();
-    scheduleDemoLoop();
-  }
+      const isMobile = window.innerWidth <= 680;
+      const maxX = isMobile ? 64 : 112;
+      const maxY = isMobile ? -42 : -62;
+      const maxRot = isMobile ? 11 : 13;
 
-  function toggleTouchPause(e) {
-    if (e) e.stopPropagation();
-    demoPaused = !demoPaused;
-    if (touchPauseBtn) {
-      touchPauseBtn.textContent = demoPaused ? "Запустить" : "Пауза";
-      touchPauseBtn.setAttribute("aria-pressed", String(demoPaused));
-    }
-    if (demoPaused) {
-      clearInterval(demoTimer);
-    } else {
-      scheduleDemoLoop();
-    }
-  }
+      let k = 0;
+      if (p < 0.48) {
+        // Approach the Focus Block
+        k = easeInOut(p / 0.48);
+      } else if (p < 0.64) {
+        // Hold contact at the block
+        k = 1;
+      } else {
+        // Smooth pullback to show locked screen
+        k = 1 - easeInOut((p - 0.64) / 0.36);
+      }
 
-  scheduleDemoLoop();
+      phone.style.setProperty("--phone-x", `${(maxX * k).toFixed(1)}px`);
+      phone.style.setProperty("--phone-y", `${(maxY * k).toFixed(1)}px`);
+      phone.style.setProperty("--phone-rot", `${(maxRot * k).toFixed(2)}deg`);
+
+      const locked = p >= 0.48;
+      if (locked !== wasLocked) {
+        wasLocked = locked;
+        stage.classList.toggle("is-locked", locked);
+        if (pill) pill.textContent = locked ? "Фокус включён" : "Обычный режим";
+        if (locked) {
+          stage.classList.remove("pulse-active");
+          void stage.offsetWidth;
+          stage.classList.add("pulse-active");
+        }
+      }
+
+      const activeIdx = p < 0.42 ? 0 : (p < 0.72 ? 1 : 2);
+      steps.forEach((el, idx) => el.classList.toggle("is-active", idx === activeIdx));
+    };
+
+    const schedule = () => {
+      if (!raf) raf = window.requestAnimationFrame(render);
+    };
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule, { passive: true });
+    render();
+  })();
 
   // Mobile Sticky Bar
   (() => {
