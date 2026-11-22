@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Focus Block — Физический выключатель думскроллинга</title>
+<title>Focus Block — физический выключатель думскроллинга</title>
 <meta name="description" content="Физический блок и приложение для iPhone. Одно касание блокирует соцсети и отвлекающие приложения, пока вы снова не подойдёте к блоку.">
 <meta name="theme-color" content="#0b0c0e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Focus Block — Физический выключатель думскроллинга">
+<meta property="og:title" content="Focus Block — физический выключатель думскроллинга">
 <meta property="og:description" content="Блок на холодильнике и приложение для iPhone: приложили телефон — соцсети заблокированы, пока не вернётесь к блоку. Без подписок и батареек.">
 <meta property="og:image" content="/img/block.jpg">
 <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
@@ -18,12 +18,12 @@
 
 <header class="site-header wrap">
   <a class="brand" href="/" aria-label="Focus Block — главная">
-    <img src="/img/logo.svg" alt="Focus Block">
+    <img src="/img/logo.svg" alt="Focus Block" width="154" height="24">
   </a>
   <nav class="header-nav" aria-label="Навигация">
-    <a href="#how">Как это работает</a>
+    <a href="#how">Как работает</a>
     <a href="#why">Почему помогает</a>
-    <a href="#calc">Калькулятор времени</a>
+    <a href="#calc">Калькулятор</a>
     <a href="#pricing">Без подписок</a>
     <a href="#faq">Вопросы</a>
   </nav>
@@ -33,48 +33,48 @@
 </header>
 
 <main>
-  <!-- Hero Section -->
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
       <div class="hero-kicker">Физический барьер против экранной зависимости</div>
       <h1 id="hero-title">Выключатель думскроллинга</h1>
-      <p class="hero-lead">Ограничения в телефоне легко смахнуть за пару секунд на автомате. Focus Block переносит переключатель в реальный мир: чтобы вернуть доступ к соцсетям, нужно встать с дивана и подойти к блоку на холодильнике.</p>
+      <p class="hero-lead">Ограничения в&nbsp;телефоне легко смахнуть за&nbsp;пару секунд на&nbsp;автомате. Focus Block переносит переключатель в&nbsp;реальный мир: чтобы вернуть доступ к&nbsp;соцсетям, нужно встать с&nbsp;дивана и&nbsp;подойти к&nbsp;блоку на&nbsp;холодильнике.</p>
       
       <div class="hero-form-card" id="order">
         <div class="form-heading">Закрытый старт продаж первого тиража</div>
         <form class="preorder-form" onsubmit="handlePreorder(event, this)">
           <div class="form-fields">
-            <input type="text" name="contact" class="form-input" placeholder="Telegram @username или Email" required autocomplete="email" aria-label="Ваш Telegram или Email">
+            <label for="hero-contact" class="sr-only">Telegram или электронная почта</label>
+            <input id="hero-contact" type="text" name="contact" class="form-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false">
             <button type="submit" class="form-submit">Получить скидку 20%</button>
           </div>
-          <p class="form-legal">Отправляя контакт, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a>. Мы пришлём только ссылку на покупку на Ozon со скидкой.</p>
-          <div class="form-success-alert">
-            Вы в списке первых! Мы пришлём вам закрытую ссылку в день старта продаж.
+          <label class="consent-row">
+            <input type="checkbox" name="consent" required>
+            <span>Соглашаюсь с&nbsp;<a href="/privacy/">политикой конфиденциальности</a> и&nbsp;на&nbsp;одно уведомление о&nbsp;старте продаж на&nbsp;Ozon</span>
+          </label>
+          <div class="form-success-alert" role="status" aria-live="polite">
+            Контакт сохранён. Мы&nbsp;пришлём закрытую ссылку со&nbsp;скидкой 20% в&nbsp;день открытия продаж на&nbsp;Ozon.
           </div>
         </form>
       </div>
 
       <div class="hero-footer-links">
-        <a href="https://t.me/focusblock" target="_blank" rel="noopener">Канал о производстве в Telegram</a>
-        <span>Доставка по всей России через Ozon</span>
+        <a href="https://t.me/focusblock" target="_blank" rel="noopener">Канал о&nbsp;производстве в&nbsp;Telegram</a>
+        <span>Доставка по&nbsp;всей России через Ozon</span>
       </div>
     </div>
 
-    <!-- Interactive Animation: Phone touches block & apps lock -->
-    <div class="interactive-demo" aria-label="Интерактивная демонстрация работы Focus Block">
-      <div class="demo-scene" id="demoScene">
-        <!-- Physical Block on wall -->
+    <div class="interactive-demo" id="interactiveDemo" aria-label="Демонстрация: телефон подносят к блоку и отвлекающие приложения блокируются">
+      <div class="demo-scene">
         <div class="demo-block">
           <div class="block-center-inlay"></div>
           <span class="block-label">Focus Block</span>
         </div>
 
-        <div class="touch-ripple" id="touchRipple"></div>
+        <div class="touch-ripple" id="touchRipple" aria-hidden="true"></div>
 
-        <!-- Phone Mockup -->
         <div class="demo-phone" id="demoPhone">
-          <div class="phone-notch"></div>
-          <div class="phone-status-bar">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-status-bar num">
             <span>14:20</span>
             <span>100%</span>
           </div>
@@ -83,36 +83,44 @@
             <div class="phone-mode-pill" id="demoModePill">Свободный режим</div>
 
             <div>
-              <div class="phone-apps-label" id="demoAppsLabel">Отвлекающие приложения:</div>
+              <div class="phone-apps-label">Отвлекающие приложения</div>
               <div class="phone-apps-grid">
                 <div class="app-tile">
-                  <div class="app-icon icon-reels">▶</div>
-                  <span class="app-title">Reels</span>
-                  <div class="app-lock-badge">
+                  <div class="app-icon icon-reels" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm6 3.5v5l4.5-2.5L10 9.5z"/></svg>
+                  </div>
+                  <span class="app-title">Рилсы</span>
+                  <div class="app-lock-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                   </div>
                 </div>
 
                 <div class="app-tile">
-                  <div class="app-icon icon-video">▶</div>
+                  <div class="app-icon icon-video" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
                   <span class="app-title">Видео</span>
-                  <div class="app-lock-badge">
+                  <div class="app-lock-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                   </div>
                 </div>
 
                 <div class="app-tile">
-                  <div class="app-icon icon-feed">✦</div>
+                  <div class="app-icon icon-feed" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg>
+                  </div>
                   <span class="app-title">Ленты</span>
-                  <div class="app-lock-badge">
+                  <div class="app-lock-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                   </div>
                 </div>
 
                 <div class="app-tile">
-                  <div class="app-icon icon-game">🎮</div>
+                  <div class="app-icon icon-game" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+                  </div>
                   <span class="app-title">Игры</span>
-                  <div class="app-lock-badge">
+                  <div class="app-lock-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                   </div>
                 </div>
@@ -121,17 +129,17 @@
 
             <div>
               <div class="phone-dock">
-                <div class="dock-icon dock-call" title="Телефон всегда работает">
+                <div class="dock-icon dock-call" title="Звонки всегда работают" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 </div>
-                <div class="dock-icon dock-maps" title="Карты и навигация">
+                <div class="dock-icon dock-maps" title="Карты и навигация" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
-                <div class="dock-icon dock-msg" title="Важные сообщения">
+                <div class="dock-icon dock-msg" title="Важные сообщения" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
                 </div>
               </div>
-              <div class="dock-note">Звонки, карты и банки всегда доступны</div>
+              <div class="dock-note">Звонки, карты и&nbsp;банки всегда доступны</div>
             </div>
           </div>
         </div>
@@ -139,240 +147,240 @@
 
       <div class="demo-controls">
         <div class="demo-caption" id="demoCaption">Приложите телефон — отвлекающие приложения закрыты.</div>
-        <button type="button" class="demo-trigger-btn" id="demoTriggerBtn" onclick="toggleDemoState()">Прикоснуться телефоном</button>
+        <div class="demo-btns">
+          <button type="button" class="demo-trigger-btn" id="demoTriggerBtn" onclick="toggleDemoState()">Прикоснуться</button>
+          <button type="button" class="demo-trigger-btn" id="demoPauseBtn" onclick="toggleDemoPause()" aria-pressed="false">Пауза</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: How it works in life -->
   <section id="how">
     <div class="wrap">
       <div class="section-head">
         <h2>Три простых шага</h2>
-        <p>Никаких сложных ритуалов и настроек. Блок работает автономно и не требует зарядки.</p>
+        <p>Никаких сложных настроек. Блок работает автономно, без батареек и&nbsp;зарядки.</p>
       </div>
 
       <ol class="steps-list">
         <li class="step-item">
-          <h3>1. Выберите отвлекающее</h3>
-          <p>В приложении Focus Block отметьте приложения, категории или сайты: соцсети, короткие видео, игры или новостные каналы.</p>
+          <h3>Выберите отвлекающее</h3>
+          <p>Отметьте в&nbsp;приложении соцсети, короткие видео, игры или новостные ленты, которые крадут ваше внимание.</p>
         </li>
         <li class="step-item">
-          <h3>2. Коснитесь блока телефоном</h3>
-          <p>Поднесите верхний край iPhone к Focus Block. Выбранные приложения моментально блокируются.</p>
+          <h3>Коснитесь блока телефоном</h3>
+          <p>Поднесите верхний край iPhone к&nbsp;Focus Block. Выбранные приложения моментально блокируются.</p>
         </li>
         <li class="step-item">
-          <h3>3. Спокойно делайте свои дела</h3>
-          <p>Телефон остаётся полезным для работы, связи и навигации. Чтобы снова залипнуть в ленту, придётся встать и дойти до блока.</p>
+          <h3>Займитесь своими делами</h3>
+          <p>Телефон остаётся полезным для работы, звонков и&nbsp;навигации. Чтобы снова открыть соцсети, придётся встать и&nbsp;дойти до&nbsp;блока.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- Section: Psychology of physical friction -->
   <section id="why">
     <div class="wrap">
       <div class="section-head">
-        <h2>Почему экранные таймеры не работают</h2>
-        <p>Алгоритмы рекомендаций проектируют целые команды специалистов. Бороться с ними силой мысли внутри одного и того же смартфона бесполезно.</p>
+        <h2>Почему экранные таймеры не&nbsp;работают</h2>
+        <p>Ленты рекомендаций проектируют так, чтобы удерживать внимание. Бороться с&nbsp;ними силой мысли внутри того&nbsp;же экрана почти невозможно.</p>
       </div>
 
       <div class="value-grid">
         <div class="value-card">
           <h3>Автоматический срыв</h3>
-          <p>Вы берёте телефон на минуту посмотреть сообщение по работе, а через 40 минут ловите себя на просмотре ленты. Дофаминовая петля включается раньше, чем просыпается самоконтроль.</p>
+          <p>Вы берёте телефон на&nbsp;минуту посмотреть рабочее сообщение, а&nbsp;через 40&nbsp;минут ловите себя на&nbsp;просмотре коротких видео. Привычка срабатывает раньше осознанности.</p>
         </div>
 
         <div class="value-card">
           <h3>Иллюзия таймеров</h3>
-          <p>Когда система показывает ограничение экранного времени, палец машинально нажимает «Игнорировать 15 минут». Цифровой запрет не работает, потому что телефон уже у вас в руках.</p>
+          <p>Когда телефон показывает ограничение экранного времени, палец машинально жмёт «Игнорировать 15&nbsp;минут». Цифровой запрет не&nbsp;держит, потому что смартфон уже в&nbsp;руках.</p>
         </div>
 
         <div class="value-card highlight">
           <h3>Физическая дистанция</h3>
-          <p>Когда переключатель висит на холодильнике в другой комнате, импульс разбивается. Чтобы продолжить скроллинг, нужно встать и дойти до него. 95% бессмысленных сессий отсекаются по пути.</p>
+          <p>Переключатель висит на&nbsp;холодильнике в&nbsp;другой комнате. Чтобы продолжить скроллинг, нужно встать и&nbsp;дойти до&nbsp;него. Большинство импульсивных заходов обрывается по&nbsp;пути.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Time Calculator -->
   <section id="calc">
     <div class="wrap calc-wrapper">
       <div>
-        <div class="section-head" style="margin-bottom: 24px;">
-          <h2>Посчитайте, сколько часов вернёт Focus Block</h2>
-          <p>Среднестатистический пользователь проводит в телефоне больше 4 часов в день. Больше половины этого времени — фоновый автоматический скроллинг.</p>
+        <div class="section-head section-head-compact">
+          <h2>Сколько времени вернёт Focus Block</h2>
+          <p>Среднестатистический владелец смартфона проводит у&nbsp;экрана больше 4&nbsp;часов в&nbsp;день. Половина этого времени — автоматический скроллинг.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 15px;">Focus Block убирает импульсивные заходы в соцсети, сохраняя доступ к важным звонкам и приложениям.</p>
+        <p class="section-note">Focus Block убирает импульсивные заходы в&nbsp;соцсети, оставляя доступ к&nbsp;звонкам, картам и&nbsp;рабочим инструментам.</p>
       </div>
 
       <div class="calc-box">
         <div class="calc-slider-wrap">
           <div class="calc-row-label">
-            <label for="screenRange">Ваше экранное время в день:</label>
-            <span class="calc-current-value num" id="screenVal">4.5 часа</span>
+            <label for="screenRange">Ваше экранное время в&nbsp;день:</label>
+            <span class="calc-current-value num" id="screenVal">4,5 часа</span>
           </div>
           <input type="range" id="screenRange" class="calc-range" min="2" max="10" step="0.5" value="4.5">
         </div>
 
         <div class="calc-output-grid">
           <div class="calc-stat-block">
-            <span class="calc-stat-value num" id="resDay">2.3 ч</span>
-            <span class="calc-stat-label">свободного времени в день</span>
+            <span class="calc-stat-value num" id="resDay">2,3&nbsp;ч</span>
+            <span class="calc-stat-label">свободного времени в&nbsp;день</span>
           </div>
           <div class="calc-stat-block">
-            <span class="calc-stat-value num" id="resMonth">69 ч</span>
-            <span class="calc-stat-label">в месяц (9 рабочих смен)</span>
+            <span class="calc-stat-value num" id="resMonth">69&nbsp;ч</span>
+            <span class="calc-stat-label">в&nbsp;месяц (9&nbsp;рабочих смен)</span>
           </div>
           <div class="calc-stat-block">
-            <span class="calc-stat-value num" id="resYear">35 дней</span>
-            <span class="calc-stat-label">чистой жизни в год</span>
+            <span class="calc-stat-value num" id="resYear">35&nbsp;дней</span>
+            <span class="calc-stat-label">чистой жизни в&nbsp;год</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Honest Economics / No Subscriptions -->
   <section id="pricing">
     <div class="wrap">
       <div class="section-head">
         <h2>Покупка один раз, без ежемесячных списаний</h2>
-        <p>Большинство приложений для цифрового детокса берут регулярную плату за функции, которые легко обойти в два тапа.</p>
+        <p>Приложения для цифрового детокса берут регулярную плату за&nbsp;ограничения, которые легко обойти в&nbsp;два нажатия.</p>
       </div>
 
       <div class="compare-grid">
         <div class="compare-card">
-          <h3>Приложения по подписке</h3>
-          <div class="compare-price bad num">от 3 000 до 7 000 ₽ каждый год</div>
+          <h3>Приложения по&nbsp;подписке</h3>
+          <div class="compare-price bad num">3&nbsp;000–7&nbsp;000&nbsp;₽ каждый год</div>
           <ul class="compare-items">
-            <li>✕ Ежегодные или ежемесячные списания денег</li>
-            <li>✕ Легко отменить блокировку не вставая с кресла</li>
-            <li>✕ Перестают работать, если отменили подписку</li>
-            <li>✕ Требуют регистрацию и передают данные на серверы</li>
+            <li>✕ Регулярные списания с&nbsp;карты</li>
+            <li>✕ Легко отключить, не&nbsp;вставая с&nbsp;дивана</li>
+            <li>✕ Перестают работать после отмены подписки</li>
+            <li>✕ Требуют аккаунт и&nbsp;передают данные на&nbsp;серверы</li>
           </ul>
         </div>
 
         <div class="compare-card winner">
           <h3>Focus Block</h3>
-          <div class="compare-price good num">0 ₽ подписок навсегда</div>
+          <div class="compare-price good num">0&nbsp;₽ подписок навсегда</div>
           <ul class="compare-items">
-            <li>✓ Оплата один раз за сам физический девайс</li>
-            <li>✓ Физический барьер — нельзя снять машинальным тапом</li>
-            <li>✓ Не требует зарядки и батареек — блок работает всегда</li>
-            <li>✓ Полная приватность: все настройки остаются на вашем iPhone</li>
+            <li>✓ Платите один раз за&nbsp;физический блок</li>
+            <li>✓ Физический барьер нельзя снять машинальным тапом</li>
+            <li>✓ Работает без батареек и&nbsp;подзарядки</li>
+            <li>✓ Полная приватность: настройки хранятся только на&nbsp;вашем iPhone</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: What is in the box -->
   <section id="box">
     <div class="wrap box-layout">
       <div>
-        <div class="section-head" style="margin-bottom: 24px;">
-          <h2>Всё необходимое в коробке</h2>
-          <p>Блок пассивный: зарядка и батарейки не нужны. Закрепите его на холодильнике или на любой другой поверхности.</p>
+        <div class="section-head section-head-compact">
+          <h2>Всё необходимое в&nbsp;коробке</h2>
+          <p>Закрепите блок на&nbsp;холодильнике или на&nbsp;любой стене подальше от&nbsp;рабочего стола и&nbsp;дивана.</p>
         </div>
 
         <ul class="box-checklist">
           <li>
-            <span><strong>Focus Block</strong> — корпус из графитового материала со встроенными магнитами</span>
+            <span><strong>Focus Block</strong> — компактный графитовый блок со&nbsp;встроенным магнитным креплением</span>
           </li>
           <li>
-            <span><strong>Тонкая металлическая пластина 3M</strong> — приклейте на деревянную стену, монитор или мебель, если холодильник далеко</span>
+            <span><strong>Тонкая стальная пластина 3M</strong> — для крепления на&nbsp;деревянную стену, шкаф или мебель, если холодильник не&nbsp;магнитится</span>
           </li>
           <li>
-            <span><strong>Бесплатное приложение для iPhone</strong> — без рекламы, подписок и сбора личных данных</span>
+            <span><strong>Бесплатное приложение для iPhone</strong> — без рекламы, подписок и&nbsp;сбора личных данных</span>
           </li>
         </ul>
       </div>
 
       <div class="box-photo-wrap">
-        <img class="box-photo" src="/img/block.jpg" width="1080" height="760" alt="Focus Block — компактный графитовый блок">
+        <img class="box-photo" src="/img/block.jpg" width="1080" height="760" loading="lazy" alt="Focus Block — компактный графитовый блок со светлой круглой вставкой">
       </div>
     </div>
   </section>
 
-  <!-- Section: FAQ -->
   <section id="faq">
     <div class="wrap">
       <div class="section-head">
-        <h2>Ответы на частые вопросы</h2>
-        <p>Всё, что важно знать о работе девайса и приложения.</p>
+        <h2>Ответы на&nbsp;частые вопросы</h2>
+        <p>Всё, что важно знать перед покупкой.</p>
       </div>
 
       <div class="faq-list">
         <details class="faq-entry" open>
           <summary class="faq-trigger">
-            <span>Что делать, если срочно нужен заблокированный телефон, а блок далеко?</span>
+            <span>Что делать, если срочно нужен заблокированный телефон, а&nbsp;блок далеко?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </summary>
           <div class="faq-body">
-            <p>В приложении предусмотрена экстренная разблокировка: нажмите и удерживайте кнопку 3 секунды. Чтобы защитить вас от собственных импульсов, экстренную разблокировку можно использовать не более 3 раз за 4 недели.</p>
+            <p>В&nbsp;приложении предусмотрена экстренная разблокировка: нажмите и&nbsp;удерживайте кнопку 3&nbsp;секунды. Чтобы она не&nbsp;превратилась в&nbsp;лазейку, её можно использовать не&nbsp;больше 3&nbsp;раз за&nbsp;4&nbsp;недели.</p>
           </div>
         </details>
 
         <details class="faq-entry">
           <summary class="faq-trigger">
-            <span>Будут ли работать звонки, SMS и навигатор?</span>
+            <span>Будут&nbsp;ли работать звонки, SMS и&nbsp;навигатор?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </summary>
           <div class="faq-body">
-            <p>Да. Вы сами выбираете список ограничений. Телефонные звонки, SMS, приложения банков, такси, навигаторы, заметки и всё необходимое для жизни продолжают работать без ограничений.</p>
+            <p>Да. Вы сами выбираете список ограничений. Телефонные звонки, SMS, банки, такси, навигаторы и&nbsp;рабочие приложения продолжают работать без ограничений.</p>
           </div>
         </details>
 
         <details class="faq-entry">
           <summary class="faq-trigger">
-            <span>Какой телефон требуется?</span>
+            <span>Какой iPhone подойдёт?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </summary>
           <div class="faq-body">
-            <p>Focus Block работает с iPhone на iOS 17 или новее: от iPhone XS, XR и SE 2-го поколения до новейших моделей. Телефон подносится к блоку верхним краем.</p>
+            <p>Любой iPhone с&nbsp;iOS 17 или новее: от&nbsp;iPhone XS, XR и&nbsp;SE 2-го поколения до&nbsp;новейших моделей.</p>
           </div>
         </details>
 
         <details class="faq-entry">
           <summary class="faq-trigger">
-            <span>Что если холодильник не магнитный или встроен в гарнитур?</span>
+            <span>Что если холодильник не&nbsp;магнитный или встроен в&nbsp;мебель?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </summary>
           <div class="faq-body">
-            <p>В комплекте идёт аккуратная стальная пластина с прочным двусторонним скотчем 3M. Приклейте её на любую стену, рабочий стол, шкаф или монитор — блок надёжно держится на ней.</p>
+            <p>В&nbsp;комплекте лежит тонкая стальная пластина с&nbsp;двусторонним скотчем 3M. Приклейте её на&nbsp;стену, шкаф или в&nbsp;прихожей — блок надёжно держится на&nbsp;ней.</p>
           </div>
         </details>
 
         <details class="faq-entry">
           <summary class="faq-trigger">
-            <span>Нужно ли заряжать блок?</span>
+            <span>Нужно&nbsp;ли заряжать блок?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </summary>
           <div class="faq-body">
-            <p>Нет. Блок не содержит аккумуляторов или батареек. Он работает пассивно от касания смартфона и прослужит долгие годы.</p>
+            <p>Нет. Внутри нет аккумуляторов и&nbsp;батареек — блок работает пассивно и&nbsp;не&nbsp;разряжается.</p>
           </div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- Final Preorder Section -->
   <section class="final-section">
     <div class="wrap final-wrap">
       <h2>Верните себе свободное время</h2>
-      <p>Первый тираж — 100 штук. Запишитесь сейчас, чтобы за 24 часа до старта получить закрытую ссылку на Ozon со скидкой 20%.</p>
+      <p>Первый тираж — 100&nbsp;штук. Запишитесь сейчас, чтобы за&nbsp;сутки до&nbsp;старта получить закрытую ссылку на&nbsp;Ozon со&nbsp;скидкой 20%.</p>
       
-      <div class="hero-form-card" style="text-align: left;">
+      <div class="hero-form-card hero-form-card-left">
         <form class="preorder-form" onsubmit="handlePreorder(event, this)">
           <div class="form-fields">
-            <input type="text" name="contact" class="form-input" placeholder="Telegram @username или Email" required autocomplete="email" aria-label="Ваш Telegram или Email для предзаказа">
-            <button type="submit" class="form-submit">Записаться со скидкой 20%</button>
+            <label for="footer-contact" class="sr-only">Telegram или электронная почта</label>
+            <input id="footer-contact" type="text" name="contact" class="form-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false">
+            <button type="submit" class="form-submit">Получить скидку 20%</button>
           </div>
-          <p class="form-legal">Согласие с <a href="/privacy/">политикой конфиденциальности</a>. Никакого спама: только сообщение в день старта продаж.</p>
-          <div class="form-success-alert">
-            Вы в списке первых! Мы сообщим вам о старте продаж со скидкой.
+          <label class="consent-row">
+            <input type="checkbox" name="consent" required>
+            <span>Соглашаюсь с&nbsp;<a href="/privacy/">политикой конфиденциальности</a> и&nbsp;на&nbsp;одно уведомление о&nbsp;старте продаж на&nbsp;Ozon</span>
+          </label>
+          <div class="form-success-alert" role="status" aria-live="polite">
+            Контакт сохранён. Мы&nbsp;пришлём закрытую ссылку со&nbsp;скидкой 20% в&nbsp;день открытия продаж на&nbsp;Ozon.
           </div>
         </form>
       </div>
@@ -380,17 +388,18 @@
   </section>
 </main>
 
-<!-- Mobile Sticky Bar -->
 <div class="mobile-sticky" id="mobileSticky">
   <div class="mobile-sticky-inner">
-    <div class="mobile-sticky-title">Focus Block · Скидка 20%</div>
-    <a href="#order" class="mobile-sticky-cta">Предзаказ</a>
+    <div class="mobile-sticky-title">Focus Block — скидка 20%</div>
+    <a href="#order" class="mobile-sticky-cta">Получить скидку</a>
   </div>
 </div>
 
 <footer class="site-footer wrap">
   <div class="footer-row">
-    <a class="brand" href="/" aria-label="Focus Block"><img src="/img/mark.svg" alt="Focus Block" style="width:28px;height:auto;"></a>
+    <a class="brand" href="/" aria-label="Focus Block">
+      <img src="/img/mark.svg" alt="Focus Block" class="brand-mark" width="28" height="16">
+    </a>
     <div class="footer-links">
       <a href="/support/">Поддержка</a>
       <a href="/privacy/">Конфиденциальность</a>
@@ -404,65 +413,76 @@
 <script>
   // Interactive Phone Animation Logic
   let isBlocked = false;
+  let isPaused = false;
   let animTimer = null;
-  const demoScene = document.querySelector('.interactive-demo');
-  const demoPhone = document.getElementById('demoPhone');
-  const modePill = document.getElementById('demoModePill');
-  const caption = document.getElementById('demoCaption');
-  const triggerBtn = document.getElementById('demoTriggerBtn');
+  const demoScene = document.getElementById("interactiveDemo");
+  const modePill = document.getElementById("demoModePill");
+  const caption = document.getElementById("demoCaption");
+  const triggerBtn = document.getElementById("demoTriggerBtn");
+  const pauseBtn = document.getElementById("demoPauseBtn");
 
   function runLockCycle() {
     if (!demoScene) return;
 
     if (!isBlocked) {
-      // Step 1: Phone moves up to touch block
-      demoScene.classList.add('anim-touch');
-      if (caption) caption.textContent = "Касание блока...";
+      demoScene.classList.add("anim-touch");
+      if (caption) caption.textContent = "Касание блока…";
 
       setTimeout(() => {
-        // Step 2: Lock activates
         isBlocked = true;
-        demoScene.classList.add('is-blocked');
-        if (modePill) modePill.textContent = "Фокус включён · Блок активен";
-        if (caption) caption.textContent = "Соцсети и игры заблокированы до следующего касания";
-        if (triggerBtn) triggerBtn.textContent = "Снять блокировку у блока";
-      }, 600);
+        demoScene.classList.add("is-blocked");
+        if (modePill) modePill.textContent = "Фокус включён";
+        if (caption) caption.textContent = "Соцсети и игры закрыты до следующего касания.";
+        if (triggerBtn) triggerBtn.textContent = "Разблокировать";
+      }, 550);
 
       setTimeout(() => {
-        // Step 3: Phone slides back down
-        demoScene.classList.remove('anim-touch');
-      }, 1200);
-
+        demoScene.classList.remove("anim-touch");
+      }, 1150);
     } else {
-      // Unlocking cycle
-      demoScene.classList.add('anim-touch');
-      if (caption) caption.textContent = "Подошли к блоку, чтобы разблокировать...";
+      demoScene.classList.add("anim-touch");
+      if (caption) caption.textContent = "Подносим телефон к блоку…";
 
       setTimeout(() => {
         isBlocked = false;
-        demoScene.classList.remove('is-blocked');
+        demoScene.classList.remove("is-blocked");
         if (modePill) modePill.textContent = "Свободный режим";
-        if (caption) caption.textContent = "Приложения снова доступны";
-        if (triggerBtn) triggerBtn.textContent = "Прикоснуться телефоном";
-      }, 600);
+        if (caption) caption.textContent = "Приложения снова доступны.";
+        if (triggerBtn) triggerBtn.textContent = "Прикоснуться";
+      }, 550);
 
       setTimeout(() => {
-        demoScene.classList.remove('anim-touch');
-      }, 1200);
+        demoScene.classList.remove("anim-touch");
+      }, 1150);
+    }
+  }
+
+  function startAutoLoop() {
+    clearInterval(animTimer);
+    if (!isPaused && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      animTimer = setInterval(runLockCycle, 6500);
     }
   }
 
   function toggleDemoState() {
-    clearInterval(animTimer);
     runLockCycle();
-    // Restart automatic loop after 8 seconds of inactivity
-    animTimer = setInterval(runLockCycle, 7000);
+    startAutoLoop();
   }
 
-  // Automatic demo cycle every 6.5 seconds
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    animTimer = setInterval(runLockCycle, 6500);
+  function toggleDemoPause() {
+    isPaused = !isPaused;
+    if (pauseBtn) {
+      pauseBtn.textContent = isPaused ? "Запустить" : "Пауза";
+      pauseBtn.setAttribute("aria-pressed", String(isPaused));
+    }
+    if (isPaused) {
+      clearInterval(animTimer);
+    } else {
+      startAutoLoop();
+    }
   }
+
+  startAutoLoop();
 
   // Time Calculator
   (() => {
@@ -476,15 +496,16 @@
 
     const calcTime = () => {
       const val = parseFloat(range.value);
-      display.textContent = `${val.toFixed(1)} ${val === 1 ? "час" : (val < 5 ? "часа" : "часов")}`;
+      const valStr = val.toFixed(1).replace(".", ",");
+      display.textContent = `${valStr}\u00A0${val === 1 ? "час" : (val < 5 ? "часа" : "часов")}`;
 
       const savedPerDay = Math.round(val * 0.52 * 10) / 10;
       const savedPerMonth = Math.round(savedPerDay * 30);
       const savedPerYear = Math.round((savedPerDay * 365) / 24);
 
-      resDay.textContent = `${savedPerDay} ч`;
-      resMonth.textContent = `${savedPerMonth} ч`;
-      resYear.textContent = `${savedPerYear} ${savedPerYear % 10 === 1 && savedPerYear !== 11 ? "день" : (savedPerYear % 10 >= 2 && savedPerYear % 10 <= 4 && (savedPerYear < 10 || savedPerYear > 20) ? "дня" : "дней")}`;
+      resDay.textContent = `${String(savedPerDay).replace(".", ",")}\u00A0ч`;
+      resMonth.textContent = `${savedPerMonth}\u00A0ч`;
+      resYear.textContent = `${savedPerYear}\u00A0${savedPerYear % 10 === 1 && savedPerYear !== 11 ? "день" : (savedPerYear % 10 >= 2 && savedPerYear % 10 <= 4 && (savedPerYear < 10 || savedPerYear > 20) ? "дня" : "дней")}`;
     };
 
     range.addEventListener("input", calcTime);
@@ -519,13 +540,13 @@
       localStorage.setItem("focusblock_waitlist", JSON.stringify(list));
     } catch (_) {}
 
-    const fields = form.querySelector('.form-fields');
-    const legal = form.querySelector('.form-legal');
-    const alertBox = form.querySelector('.form-success-alert');
+    const fields = form.querySelector(".form-fields");
+    const consent = form.querySelector(".consent-row");
+    const alertBox = form.querySelector(".form-success-alert");
 
-    if (fields) fields.style.display = 'none';
-    if (legal) legal.style.display = 'none';
-    if (alertBox) alertBox.style.display = 'block';
+    if (fields) fields.style.display = "none";
+    if (consent) consent.style.display = "none";
+    if (alertBox) alertBox.style.display = "block";
   }
 </script>
 </body>
