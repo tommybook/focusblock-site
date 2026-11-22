@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Focus Block — Физический выключатель думскроллинга для iPhone</title>
-<meta name="description" content="Эстетичный физический NFC-блок и приложение для iPhone. Помогает побороть цифровую зависимость и вернуть до 2–3 часов жизни каждый день.">
+<title>Focus Block — Физический выключатель думскроллинга</title>
+<meta name="description" content="Физический блок и приложение для iPhone. Одно касание блокирует соцсети и отвлекающие приложения, пока вы снова не подойдёте к блоку.">
 <meta name="theme-color" content="#0b0c0e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Focus Block — Физический выключатель думскроллинга">
-<meta property="og:description" content="NFC-блок на холодильник и приложение для iPhone. Никаких подписок, батареек и серверов. 1-й тираж скоро на Ozon.">
+<meta property="og:description" content="Блок на холодильнике и приложение для iPhone: приложили телефон — соцсети заблокированы, пока не вернётесь к блоку. Без подписок и батареек.">
 <meta property="og:image" content="/img/block.jpg">
 <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -20,18 +20,15 @@
   <a class="brand" href="/" aria-label="Focus Block — главная">
     <img src="/img/logo.svg" alt="Focus Block">
   </a>
-  <nav class="header-nav" aria-label="Навигация по странице">
-    <a href="#psychology">Почему работает</a>
-    <a href="#how">Как устроено</a>
+  <nav class="header-nav" aria-label="Навигация">
+    <a href="#how">Как это работает</a>
+    <a href="#why">Почему помогает</a>
+    <a href="#calc">Калькулятор времени</a>
     <a href="#pricing">Без подписок</a>
-    <a href="#details">Комплект</a>
     <a href="#faq">Вопросы</a>
   </nav>
   <div class="header-actions">
-    <span class="header-status">
-      <span class="status-dot" aria-hidden="true"></span> 1-й тираж · Скоро
-    </span>
-    <a href="#order" class="header-btn">Предзаказ −20%</a>
+    <a href="#order" class="header-cta">Предзаказ со скидкой 20%</a>
   </div>
 </header>
 
@@ -39,458 +36,496 @@
   <!-- Hero Section -->
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Физический выключатель думскроллинга</p>
-      <h1 id="hero-title">Выключатель<br><em>думскроллинга.</em></h1>
-      <p class="lead">Focus Block — эстетичный NFC-блок и приложение для iPhone. Ограничения в телефоне вы отменяете за 2 секунды на автомате. Focus Block переносит переключатель в реальный мир: чтобы вернуть соцсети, нужно встать с дивана и дойти до блока.</p>
+      <div class="hero-kicker">Физический барьер против экранной зависимости</div>
+      <h1 id="hero-title">Выключатель думскроллинга</h1>
+      <p class="hero-lead">Ограничения в телефоне легко смахнуть за пару секунд на автомате. Focus Block переносит переключатель в реальный мир: чтобы вернуть доступ к соцсетям, нужно встать с дивана и подойти к блоку на холодильнике.</p>
       
-      <div class="preorder-box" id="order">
-        <div class="preorder-badge">
-          <span>Ограниченный 1-й тираж · Скидка 20%</span>
-        </div>
-        
-        <form class="preorder-form" id="hero-waitlist-form" onsubmit="handleWaitlist(event, this)">
-          <div class="form-row">
-            <input type="text" name="contact" class="preorder-input" placeholder="Telegram @username или Email" required autocomplete="off" aria-label="Контакт для получения скидки">
-            <button type="submit" class="preorder-submit">
-              <span>Получить скидку</span>
-              <span class="btn-arrow" aria-hidden="true">→</span>
-            </button>
+      <div class="hero-form-card" id="order">
+        <div class="form-heading">Закрытый старт продаж первого тиража</div>
+        <form class="preorder-form" onsubmit="handlePreorder(event, this)">
+          <div class="form-fields">
+            <input type="text" name="contact" class="form-input" placeholder="Telegram @username или Email" required autocomplete="email" aria-label="Ваш Telegram или Email">
+            <button type="submit" class="form-submit">Получить скидку 20%</button>
           </div>
-          <p class="form-note">Без спама. Пришлём секретную ссылку на закрытый старт продаж на Ozon со скидкой.</p>
-          <div class="form-success-msg">
-            ✓ Вы в списке первых! Мы пришлём ссылку на покупку сразу в момент открытия продаж.
+          <p class="form-legal">Отправляя контакт, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a>. Мы пришлём только ссылку на покупку на Ozon со скидкой.</p>
+          <div class="form-success-alert">
+            Вы в списке первых! Мы пришлём вам закрытую ссылку в день старта продаж.
           </div>
         </form>
+      </div>
 
-        <div class="hero-sublinks">
-          <a href="https://t.me/focusblock" target="_blank" rel="noopener" class="tg-cta-link">
-            <span>Канал в Telegram с новостями производства →</span>
-          </a>
-          <span class="ozon-note">
-            <span class="status-dot" aria-hidden="true"></span> Будет доступен на Ozon с быстрой доставкой по РФ
-          </span>
-        </div>
+      <div class="hero-footer-links">
+        <a href="https://t.me/focusblock" target="_blank" rel="noopener">Канал о производстве в Telegram</a>
+        <span>Доставка по всей России через Ozon</span>
       </div>
     </div>
 
-    <div class="product-stage" aria-label="Focus Block — компактный графитовый NFC-блок">
-      <div class="stage-pills">
-        <span class="stage-pill">NTAG215 · БЕЗ БАТАРЕЕК</span>
-        <span class="stage-pill">НЕОДИМОВЫЕ МАГНИТЫ</span>
-        <span class="stage-pill">APPLE SCREEN TIME API</span>
+    <!-- Interactive Animation: Phone touches block & apps lock -->
+    <div class="interactive-demo" aria-label="Интерактивная демонстрация работы Focus Block">
+      <div class="demo-scene" id="demoScene">
+        <!-- Physical Block on wall -->
+        <div class="demo-block">
+          <div class="block-center-inlay"></div>
+          <span class="block-label">Focus Block</span>
+        </div>
+
+        <div class="touch-ripple" id="touchRipple"></div>
+
+        <!-- Phone Mockup -->
+        <div class="demo-phone" id="demoPhone">
+          <div class="phone-notch"></div>
+          <div class="phone-status-bar">
+            <span>14:20</span>
+            <span>100%</span>
+          </div>
+
+          <div class="phone-screen">
+            <div class="phone-mode-pill" id="demoModePill">Свободный режим</div>
+
+            <div>
+              <div class="phone-apps-label" id="demoAppsLabel">Отвлекающие приложения:</div>
+              <div class="phone-apps-grid">
+                <div class="app-tile">
+                  <div class="app-icon icon-reels">▶</div>
+                  <span class="app-title">Reels</span>
+                  <div class="app-lock-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  </div>
+                </div>
+
+                <div class="app-tile">
+                  <div class="app-icon icon-video">▶</div>
+                  <span class="app-title">Видео</span>
+                  <div class="app-lock-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  </div>
+                </div>
+
+                <div class="app-tile">
+                  <div class="app-icon icon-feed">✦</div>
+                  <span class="app-title">Ленты</span>
+                  <div class="app-lock-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  </div>
+                </div>
+
+                <div class="app-tile">
+                  <div class="app-icon icon-game">🎮</div>
+                  <span class="app-title">Игры</span>
+                  <div class="app-lock-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="phone-dock">
+                <div class="dock-icon dock-call" title="Телефон всегда работает">
+                  <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </div>
+                <div class="dock-icon dock-maps" title="Карты и навигация">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="dock-icon dock-msg" title="Важные сообщения">
+                  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                </div>
+              </div>
+              <div class="dock-note">Звонки, карты и банки всегда доступны</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <img class="product-image" src="/img/block.jpg" width="1080" height="760" alt="Focus Block — графитовый блок со светлой круглой вставкой и рифлёным боком">
-      <div class="stage-caption">
-        <span>60 × 60 мм · 55 грамм</span>
-        <span>Вечный пассивный чип</span>
+
+      <div class="demo-controls">
+        <div class="demo-caption" id="demoCaption">Приложите телефон — отвлекающие приложения закрыты.</div>
+        <button type="button" class="demo-trigger-btn" id="demoTriggerBtn" onclick="toggleDemoState()">Прикоснуться телефоном</button>
       </div>
-      <a class="scroll-cue" href="#psychology" aria-label="Прокрутить к разделу «Почему это работает»"><span></span></a>
     </div>
   </section>
 
-  <!-- Section 1: Psychology & Why Willpower Fails -->
-  <section class="psychology-section" id="psychology" aria-labelledby="psych-title">
+  <!-- Section: How it works in life -->
+  <section id="how">
     <div class="wrap">
-      <div class="psychology-header">
-        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> 01 / ПСИХОЛОГИЯ ФОКУСА</p>
-        <h2 id="psych-title">Почему сила воли и обычные таймеры<br><em>не работают против алгоритмов.</em></h2>
-        <p>Социальные сети и короткие видео проектируют сотни инженеров, чтобы удерживать ваше внимание. Бороться с ними силой мысли внутри того же смартфона бесполезно.</p>
+      <div class="section-head">
+        <h2>Три простых шага</h2>
+        <p>Никаких сложных ритуалов и настроек. Блок работает автономно и не требует зарядки.</p>
       </div>
 
-      <div class="psychology-cards">
-        <div class="psych-card">
-          <span class="psych-card-index">01 / АВТОМАТИЗМ</span>
-          <h3>Ловушка импульса</h3>
-          <p>Вы берёте телефон «на секунду проверить рабочую почту», а через 40 минут ловите себя на просмотре рилсов. Дофаминовая петля включается раньше, чем просыпается самоконтроль.</p>
-        </div>
-
-        <div class="psych-card">
-          <span class="psych-card-index">02 / ЛЕГКИЙ ОБХОД</span>
-          <h3>Иллюзия таймеров</h3>
-          <p>Когда iOS показывает ограничение «Экранного времени», палец машинально жмёт «Игнорировать 15 минут». Цифровой запрет не работает, потому что смартфон уже у вас в руках.</p>
-        </div>
-
-        <div class="psych-card highlight">
-          <span class="psych-card-index">03 / РЕШЕНИЕ FOCUS BLOCK</span>
-          <h3>Сила физического барьера</h3>
-          <p>Focus Block выносит выключатель наружу. Блок висит на холодильнике в другой комнате. Чтобы продолжить скроллинг, нужно встать и дойти до него. 95% импульсивных срывов угасают по пути.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Interactive Time Calculator -->
-  <section class="calculator-section" aria-labelledby="calc-title">
-    <div class="wrap calculator-inner">
-      <div class="calc-info">
-        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> СКОЛЬКО СТОИТ ВАШЕ ВРЕМЯ</p>
-        <h2 id="calc-title">Посчитайте, сколько жизни<br><em>вернёт один блок.</em></h2>
-        <p>Среднестатистический пользователь проводит в телефоне более 4 часов в день. Из них больше половины уходит на фоновое залипание и автоматический скроллинг.</p>
-      </div>
-
-      <div class="calc-card">
-        <div class="calc-slider-group">
-          <div class="calc-slider-header">
-            <label for="screenTimeRange">Ваше текущее экранное время в день:</label>
-            <span class="calc-slider-value" id="screenTimeDisplay">4.5 часа</span>
-          </div>
-          <input type="range" id="screenTimeRange" class="calc-slider" min="2" max="10" step="0.5" value="4.5">
-        </div>
-
-        <div class="calc-results">
-          <div class="calc-stat">
-            <span class="calc-stat-num" id="savedDay">2.3 ч</span>
-            <span class="calc-stat-desc">свободного времени в день</span>
-          </div>
-          <div class="calc-stat">
-            <span class="calc-stat-num" id="savedMonth">69 ч</span>
-            <span class="calc-stat-desc">в месяц (это 9 рабочих смен)</span>
-          </div>
-          <div class="calc-stat">
-            <span class="calc-stat-num" id="savedYear">35 дней</span>
-            <span class="calc-stat-desc">чистой жизни в год для важного</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2: How It Works -->
-  <section class="how-section" id="how" aria-labelledby="how-title">
-    <div class="wrap section-inner">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">02 / ТРИ ПРОСТЫХ ШАГА</p>
-          <h2 id="how-title">Касание —<br>и телефон становится инструментом.</h2>
-        </div>
-        <p class="section-aside">Никаких сложных ритуалов.<br>Всё настраивается один раз<br>и работает по касанию.</p>
-      </div>
-
-      <ol class="steps">
-        <li class="step-card">
-          <span class="step-number">01</span>
-          <span class="step-rule" aria-hidden="true"></span>
-          <h3>Выберите отвлекающее</h3>
-          <p>В приложении Focus Block отметьте приложения, категории или сайты, которые крадут ваше внимание: соцсети, видео, игры или ленты новостей.</p>
+      <ol class="steps-list">
+        <li class="step-item">
+          <h3>1. Выберите отвлекающее</h3>
+          <p>В приложении Focus Block отметьте приложения, категории или сайты: соцсети, короткие видео, игры или новостные каналы.</p>
         </li>
-        <li class="step-card">
-          <span class="step-number">02</span>
-          <span class="step-rule" aria-hidden="true"></span>
-          <h3>Коснитесь блока</h3>
-          <p>Приложите верхнюю часть iPhone к Focus Block. Системная функция «Экранное время» iOS мгновенно ставит выбранное на паузу.</p>
+        <li class="step-item">
+          <h3>2. Коснитесь блока телефоном</h3>
+          <p>Поднесите верхний край iPhone к Focus Block. Выбранные приложения моментально блокируются.</p>
         </li>
-        <li class="step-card">
-          <span class="step-number">03</span>
-          <span class="step-rule" aria-hidden="true"></span>
-          <h3>Займитесь важным</h3>
-          <p>Телефон остаётся телефоном: звонки, навигатор, заметки и банки работают. А чтобы вернуть соцсети, нужно физически подойти к блоку ещё раз.</p>
+        <li class="step-item">
+          <h3>3. Спокойно делайте свои дела</h3>
+          <p>Телефон остаётся полезным для работы, связи и навигации. Чтобы снова залипнуть в ленту, придётся встать и дойти до блока.</p>
         </li>
       </ol>
-
-      <div class="how-footer-banner">
-        <span><strong>Защита от форс-мажоров:</strong> если срочно нужен заблокированный телефон, а вы вне дома, в приложении есть экстренная разблокировка (удержание 3 секунды, до 3 раз за 4 недели).</span>
-        <span class="emergency-tag">Экстренный доступ</span>
-      </div>
     </div>
   </section>
 
-  <!-- Section 3: Economics / No Subscriptions -->
-  <section class="comparison-section" id="pricing" aria-labelledby="comp-title">
+  <!-- Section: Psychology of physical friction -->
+  <section id="why">
     <div class="wrap">
-      <div class="comparison-header">
-        <p class="eyebrow" style="justify-content: center;"><span class="eyebrow-line" aria-hidden="true"></span> 03 / ЧЕСТНАЯ ЭКОНОМИКА</p>
-        <h2 id="comp-title">Купил один раз.<br><em>Никаких ежемесячных списаний.</em></h2>
-        <p>Большинство приложений для цифрового детокса берут регулярную плату за функции, которые легко обойти в два тапа. Focus Block устроен иначе.</p>
+      <div class="section-head">
+        <h2>Почему экранные таймеры не работают</h2>
+        <p>Алгоритмы рекомендаций проектируют целые команды специалистов. Бороться с ними силой мысли внутри одного и того же смартфона бесполезно.</p>
       </div>
 
-      <div class="comparison-grid">
-        <div class="comp-card comp-competitor">
-          <span class="comp-tag">Приложения по подписке (Opal, One Sec)</span>
-          <h3>Подписочные приложения</h3>
-          <div class="comp-price">от 3 000 до 7 000 ₽ / в год</div>
-          <ul class="comp-list">
-            <li><span class="comp-icon cross">✕</span> Ежегодные или ежемесячные списания денег</li>
-            <li><span class="comp-icon cross">✕</span> Легко отменить блокировку, не вставая с кресла</li>
-            <li><span class="comp-icon cross">✕</span> Требуют аккаунт и передают статистику на свои серверы</li>
-            <li><span class="comp-icon cross">✕</span> Перестают работать, если перестали платить</li>
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Автоматический срыв</h3>
+          <p>Вы берёте телефон на минуту посмотреть сообщение по работе, а через 40 минут ловите себя на просмотре ленты. Дофаминовая петля включается раньше, чем просыпается самоконтроль.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Иллюзия таймеров</h3>
+          <p>Когда система показывает ограничение экранного времени, палец машинально нажимает «Игнорировать 15 минут». Цифровой запрет не работает, потому что телефон уже у вас в руках.</p>
+        </div>
+
+        <div class="value-card highlight">
+          <h3>Физическая дистанция</h3>
+          <p>Когда переключатель висит на холодильнике в другой комнате, импульс разбивается. Чтобы продолжить скроллинг, нужно встать и дойти до него. 95% бессмысленных сессий отсекаются по пути.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Time Calculator -->
+  <section id="calc">
+    <div class="wrap calc-wrapper">
+      <div>
+        <div class="section-head" style="margin-bottom: 24px;">
+          <h2>Посчитайте, сколько часов вернёт Focus Block</h2>
+          <p>Среднестатистический пользователь проводит в телефоне больше 4 часов в день. Больше половины этого времени — фоновый автоматический скроллинг.</p>
+        </div>
+        <p style="color: var(--text-muted); font-size: 15px;">Focus Block убирает импульсивные заходы в соцсети, сохраняя доступ к важным звонкам и приложениям.</p>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-slider-wrap">
+          <div class="calc-row-label">
+            <label for="screenRange">Ваше экранное время в день:</label>
+            <span class="calc-current-value num" id="screenVal">4.5 часа</span>
+          </div>
+          <input type="range" id="screenRange" class="calc-range" min="2" max="10" step="0.5" value="4.5">
+        </div>
+
+        <div class="calc-output-grid">
+          <div class="calc-stat-block">
+            <span class="calc-stat-value num" id="resDay">2.3 ч</span>
+            <span class="calc-stat-label">свободного времени в день</span>
+          </div>
+          <div class="calc-stat-block">
+            <span class="calc-stat-value num" id="resMonth">69 ч</span>
+            <span class="calc-stat-label">в месяц (9 рабочих смен)</span>
+          </div>
+          <div class="calc-stat-block">
+            <span class="calc-stat-value num" id="resYear">35 дней</span>
+            <span class="calc-stat-label">чистой жизни в год</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Honest Economics / No Subscriptions -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Покупка один раз, без ежемесячных списаний</h2>
+        <p>Большинство приложений для цифрового детокса берут регулярную плату за функции, которые легко обойти в два тапа.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card">
+          <h3>Приложения по подписке</h3>
+          <div class="compare-price bad num">от 3 000 до 7 000 ₽ каждый год</div>
+          <ul class="compare-items">
+            <li>✕ Ежегодные или ежемесячные списания денег</li>
+            <li>✕ Легко отменить блокировку не вставая с кресла</li>
+            <li>✕ Перестают работать, если отменили подписку</li>
+            <li>✕ Требуют регистрацию и передают данные на серверы</li>
           </ul>
         </div>
 
-        <div class="comp-card comp-fb">
-          <span class="comp-tag">Один физический блок</span>
+        <div class="compare-card winner">
           <h3>Focus Block</h3>
-          <div class="comp-price">0 ₽ подписок навсегда</div>
-          <ul class="comp-list">
-            <li><span class="comp-icon check">✓</span> Оплата один раз за сам физический девайс</li>
-            <li><span class="comp-icon check">✓</span> Физический барьер — нельзя обойти машинальным тапом</li>
-            <li><span class="comp-icon check">✓</span> 100% приватность: системный Screen Time API, без серверов</li>
-            <li><span class="comp-icon check">✓</span> Вечная работа: нет аккумулятора, не требует зарядки</li>
-            <li><span class="comp-icon check">✓</span> В комплекте стальная пластина 3M на любую стену</li>
+          <div class="compare-price good num">0 ₽ подписок навсегда</div>
+          <ul class="compare-items">
+            <li>✓ Оплата один раз за сам физический девайс</li>
+            <li>✓ Физический барьер — нельзя снять машинальным тапом</li>
+            <li>✓ Не требует зарядки и батареек — блок работает всегда</li>
+            <li>✓ Полная приватность: все настройки остаются на вашем iPhone</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Details & In The Box -->
-  <section class="details wrap" id="details" aria-labelledby="details-title">
-    <div class="details-intro">
-      <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> 04 / ДЕТАЛИ И КОМПЛЕКТ</p>
-      <h2 id="details-title">Тактильный монолит.<br>Только намерение.</h2>
-      <p>Блок пассивный: батарейки и зарядка не нужны. Внутри — промышленный NTAG-чип и неодимовые магниты высокой мощности. Закрепите его на холодильнике или на стене.</p>
-      
-      <div class="box-contents-card">
-        <div class="box-title">Что внутри коробки:</div>
-        <ul class="box-list">
-          <li><strong>Focus Block</strong> — корпус из графитового полимера с магнитами</li>
-          <li><strong>Стальная пластина с 3M-скотчем</strong> — для крепления на деревянную стену или мебель</li>
-          <li><strong>Инструкция с QR-кодом</strong> для быстрой настройки в iOS</li>
-          <li><strong>Бесплатное приложение</strong> в App Store (без рекламы и аналитики)</li>
+  <!-- Section: What is in the box -->
+  <section id="box">
+    <div class="wrap box-layout">
+      <div>
+        <div class="section-head" style="margin-bottom: 24px;">
+          <h2>Всё необходимое в коробке</h2>
+          <p>Блок пассивный: зарядка и батарейки не нужны. Закрепите его на холодильнике или на любой другой поверхности.</p>
+        </div>
+
+        <ul class="box-checklist">
+          <li>
+            <span><strong>Focus Block</strong> — корпус из графитового материала со встроенными магнитами</span>
+          </li>
+          <li>
+            <span><strong>Тонкая металлическая пластина 3M</strong> — приклейте на деревянную стену, монитор или мебель, если холодильник далеко</span>
+          </li>
+          <li>
+            <span><strong>Бесплатное приложение для iPhone</strong> — без рекламы, подписок и сбора личных данных</span>
+          </li>
         </ul>
       </div>
 
-      <div class="detail-spec">
-        <span class="spec-ring" aria-hidden="true"></span>
-        <span>ГРАФИТ · НЕОДИМОВЫЕ МАГНИТЫ · ПЛАСТИНА 3M · NFC</span>
+      <div class="box-photo-wrap">
+        <img class="box-photo" src="/img/block.jpg" width="1080" height="760" alt="Focus Block — компактный графитовый блок">
       </div>
     </div>
-
-    <ul class="feature-list">
-      <li>
-        <span class="feature-mark">A</span>
-        <span>
-          <strong>Ваши правила — внутри iOS</strong>
-          <small>Приложение использует системный фреймворк Apple FamilyControls. Никаких сторонних профилей MDM или VPN-туннелей.</small>
-        </span>
-        <span class="feature-arrow" aria-hidden="true">↗</span>
-      </li>
-      <li>
-        <span class="feature-mark">B</span>
-        <span>
-          <strong>Режимы под разные моменты</strong>
-          <small>Настройте строгий профиль для глубокой работы («Глубокий фокус») и мягкий для вечернего отдыха с семьей («Вечер без экрана»).</small>
-        </span>
-        <span class="feature-arrow" aria-hidden="true">↗</span>
-      </li>
-      <li>
-        <span class="feature-mark">C</span>
-        <span>
-          <strong>Абсолютная приватность</strong>
-          <small>Список блокируемых приложений шифруется самой системой iOS. Ни сайт, ни приложение не имеют доступа к вашим личным данным.</small>
-        </span>
-        <span class="feature-arrow" aria-hidden="true">↗</span>
-      </li>
-    </ul>
   </section>
 
-  <!-- Section 5: FAQ -->
-  <section class="faq-section" id="faq" aria-labelledby="faq-title">
+  <!-- Section: FAQ -->
+  <section id="faq">
     <div class="wrap">
-      <div class="faq-header">
-        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> 05 / ЧАСТЫЕ ВОПРОСЫ</p>
-        <h2 id="faq-title">Всё, что важно знать<br><em>перед покупкой.</em></h2>
-        <p>Ответы на ключевые вопросы о работе блока, приложении и совместимости.</p>
+      <div class="section-head">
+        <h2>Ответы на частые вопросы</h2>
+        <p>Всё, что важно знать о работе девайса и приложения.</p>
       </div>
 
-      <div class="faq-accordion">
-        <details class="faq-item" open>
-          <summary class="faq-question">
-            <span>Что делать, если срочно нужен заблокированный телефон, а блока нет рядом?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
+      <div class="faq-list">
+        <details class="faq-entry" open>
+          <summary class="faq-trigger">
+            <span>Что делать, если срочно нужен заблокированный телефон, а блок далеко?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
           </summary>
-          <div class="faq-answer">
-            <p>В приложении предусмотрена кнопка «Экстренная разблокировка». Нажмите и удерживайте её 3 секунды. Чтобы защитить вас от собственных импульсов, экстренную разблокировку можно активировать не более 3 раз за 4 недели.</p>
+          <div class="faq-body">
+            <p>В приложении предусмотрена экстренная разблокировка: нажмите и удерживайте кнопку 3 секунды. Чтобы защитить вас от собственных импульсов, экстренную разблокировку можно использовать не более 3 раз за 4 недели.</p>
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>Будут ли работать звонки, SMS и важные приложения?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
+        <details class="faq-entry">
+          <summary class="faq-trigger">
+            <span>Будут ли работать звонки, SMS и навигатор?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
           </summary>
-          <div class="faq-answer">
-            <p>Да. Вы сами выбираете список ограничений. Телефонные звонки, SMS, приложения банков, такси, навигаторы, заметки и всё необходимое для повседневной жизни продолжают работать без ограничений.</p>
+          <div class="faq-body">
+            <p>Да. Вы сами выбираете список ограничений. Телефонные звонки, SMS, приложения банков, такси, навигаторы, заметки и всё необходимое для жизни продолжают работать без ограничений.</p>
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>Какой iPhone требуется?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
+        <details class="faq-entry">
+          <summary class="faq-trigger">
+            <span>Какой телефон требуется?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
           </summary>
-          <div class="faq-answer">
-            <p>Focus Block работает на любом iPhone с поддержкой NFC и операционной системой iOS 17 или новее (iPhone XS, iPhone XR, iPhone 11, 12, 13, 14, 15, 16 и iPhone SE 2/3 поколения).</p>
+          <div class="faq-body">
+            <p>Focus Block работает с iPhone на iOS 17 или новее: от iPhone XS, XR и SE 2-го поколения до новейших моделей. Телефон подносится к блоку верхним краем.</p>
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>Что если дверца холодильника не магнитная или блок нужно повесить на стену?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
+        <details class="faq-entry">
+          <summary class="faq-trigger">
+            <span>Что если холодильник не магнитный или встроен в гарнитур?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
           </summary>
-          <div class="faq-answer">
-            <p>В комплекте с каждым Focus Block идёт аккуратная стальная пластина с прочным двусторонним скотчем 3M VHB. Её можно приклеить на стену, монитор, шкаф или деревянную мебель — и блок будет надёжно держаться на ней.</p>
+          <div class="faq-body">
+            <p>В комплекте идёт аккуратная стальная пластина с прочным двусторонним скотчем 3M. Приклейте её на любую стену, рабочий стол, шкаф или монитор — блок надёжно держится на ней.</p>
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>А что если я просто удалю приложение, чтобы снять блок?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
+        <details class="faq-entry">
+          <summary class="faq-trigger">
+            <span>Нужно ли заряжать блок?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
           </summary>
-          <div class="faq-answer">
-            <p>В системных настройках iOS («Экранное время» → «Контент и конфиденциальность») можно включить запрет на удаление приложений. Тогда обойти фокус без блока будет физически невозможно.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>Нужно ли заряжать блок или менять батарейки?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-answer">
-            <p>Нет! Блок абсолютно пассивный. Внутри установлена промышленная NFC-метка, которая питается радиочастотным полем смартфона в момент касания. Блок не содержит аккумуляторов и прослужит долгие годы.</p>
+          <div class="faq-body">
+            <p>Нет. Блок не содержит аккумуляторов или батареек. Он работает пассивно от касания смартфона и прослужит долгие годы.</p>
           </div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Closing Section / Pre-order -->
-  <section class="closing wrap" aria-label="Закрытый старт продаж Focus Block">
-    <div class="closing-mark" aria-hidden="true"><img src="/img/mark.svg" alt=""></div>
-    <p class="eyebrow">ПАУЗА — ТОЖЕ ВЫБОР</p>
-    <p class="closing-title">Оставьте место<br><em>для важного.</em></p>
-    
-    <div class="preorder-box closing-card">
-      <div class="preorder-badge">
-        <span>Закрытый старт 1-го тиража</span>
+  <!-- Final Preorder Section -->
+  <section class="final-section">
+    <div class="wrap final-wrap">
+      <h2>Верните себе свободное время</h2>
+      <p>Первый тираж — 100 штук. Запишитесь сейчас, чтобы за 24 часа до старта получить закрытую ссылку на Ozon со скидкой 20%.</p>
+      
+      <div class="hero-form-card" style="text-align: left;">
+        <form class="preorder-form" onsubmit="handlePreorder(event, this)">
+          <div class="form-fields">
+            <input type="text" name="contact" class="form-input" placeholder="Telegram @username или Email" required autocomplete="email" aria-label="Ваш Telegram или Email для предзаказа">
+            <button type="submit" class="form-submit">Записаться со скидкой 20%</button>
+          </div>
+          <p class="form-legal">Согласие с <a href="/privacy/">политикой конфиденциальности</a>. Никакого спама: только сообщение в день старта продаж.</p>
+          <div class="form-success-alert">
+            Вы в списке первых! Мы сообщим вам о старте продаж со скидкой.
+          </div>
+        </form>
       </div>
-      <form class="preorder-form" onsubmit="handleWaitlist(event, this)">
-        <div class="form-row">
-          <input type="text" name="contact" class="preorder-input" placeholder="Telegram @username или Email" required autocomplete="off" aria-label="Контакт для предзаказа">
-          <button type="submit" class="preorder-submit">
-            <span>Записаться со скидкой 20%</span>
-            <span class="btn-arrow" aria-hidden="true">→</span>
-          </button>
-        </div>
-        <p class="form-note">Первый тираж — 100 экземпляров. Мы уведомим вас за 24 часа до старта на Ozon.</p>
-        <div class="form-success-msg">
-          ✓ Спасибо! Вы в списке первых. Мы пришлём ссылку сразу в момент открытия продаж.
-        </div>
-      </form>
     </div>
   </section>
 </main>
 
-<!-- Sticky Mobile Bottom Bar -->
-<div class="sticky-mobile-cta" id="stickyCta">
-  <div class="sticky-cta-content">
-    <div>
-      <div class="sticky-cta-title">Focus Block</div>
-      <div class="sticky-cta-subtitle">1-й тираж · Скидка 20%</div>
-    </div>
-    <a href="#order" class="sticky-cta-btn">Предзаказ</a>
+<!-- Mobile Sticky Bar -->
+<div class="mobile-sticky" id="mobileSticky">
+  <div class="mobile-sticky-inner">
+    <div class="mobile-sticky-title">Focus Block · Скидка 20%</div>
+    <a href="#order" class="mobile-sticky-cta">Предзаказ</a>
   </div>
 </div>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <a class="footer-brand" href="/" aria-label="Focus Block — главная"><img src="/img/mark.svg" alt=""></a>
-    <span class="footer-wordmark">FOCUS BLOCK</span>
-    <a href="/support/">Поддержка</a>
-    <a href="/privacy/">Конфиденциальность</a>
-    <a href="https://t.me/focusblock" target="_blank" rel="noopener">Telegram</a>
-    <a href="mailto:focusblock@yandex.ru">focusblock@yandex.ru</a>
-    <span class="copyright">© 2026 Focus Block</span>
+<footer class="site-footer wrap">
+  <div class="footer-row">
+    <a class="brand" href="/" aria-label="Focus Block"><img src="/img/mark.svg" alt="Focus Block" style="width:28px;height:auto;"></a>
+    <div class="footer-links">
+      <a href="/support/">Поддержка</a>
+      <a href="/privacy/">Конфиденциальность</a>
+      <a href="https://t.me/focusblock" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:focusblock@yandex.ru">focusblock@yandex.ru</a>
+    </div>
+    <span>© 2026 Focus Block</span>
   </div>
 </footer>
 
 <script>
-  // Product image smooth scroll rotation
+  // Interactive Phone Animation Logic
+  let isBlocked = false;
+  let animTimer = null;
+  const demoScene = document.querySelector('.interactive-demo');
+  const demoPhone = document.getElementById('demoPhone');
+  const modePill = document.getElementById('demoModePill');
+  const caption = document.getElementById('demoCaption');
+  const triggerBtn = document.getElementById('demoTriggerBtn');
+
+  function runLockCycle() {
+    if (!demoScene) return;
+
+    if (!isBlocked) {
+      // Step 1: Phone moves up to touch block
+      demoScene.classList.add('anim-touch');
+      if (caption) caption.textContent = "Касание блока...";
+
+      setTimeout(() => {
+        // Step 2: Lock activates
+        isBlocked = true;
+        demoScene.classList.add('is-blocked');
+        if (modePill) modePill.textContent = "Фокус включён · Блок активен";
+        if (caption) caption.textContent = "Соцсети и игры заблокированы до следующего касания";
+        if (triggerBtn) triggerBtn.textContent = "Снять блокировку у блока";
+      }, 600);
+
+      setTimeout(() => {
+        // Step 3: Phone slides back down
+        demoScene.classList.remove('anim-touch');
+      }, 1200);
+
+    } else {
+      // Unlocking cycle
+      demoScene.classList.add('anim-touch');
+      if (caption) caption.textContent = "Подошли к блоку, чтобы разблокировать...";
+
+      setTimeout(() => {
+        isBlocked = false;
+        demoScene.classList.remove('is-blocked');
+        if (modePill) modePill.textContent = "Свободный режим";
+        if (caption) caption.textContent = "Приложения снова доступны";
+        if (triggerBtn) triggerBtn.textContent = "Прикоснуться телефоном";
+      }, 600);
+
+      setTimeout(() => {
+        demoScene.classList.remove('anim-touch');
+      }, 1200);
+    }
+  }
+
+  function toggleDemoState() {
+    clearInterval(animTimer);
+    runLockCycle();
+    // Restart automatic loop after 8 seconds of inactivity
+    animTimer = setInterval(runLockCycle, 7000);
+  }
+
+  // Automatic demo cycle every 6.5 seconds
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    animTimer = setInterval(runLockCycle, 6500);
+  }
+
+  // Time Calculator
   (() => {
-    const block = document.querySelector(".product-image");
-    const stage = document.querySelector(".product-stage");
-    if (!block || !stage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const range = document.getElementById("screenRange");
+    const display = document.getElementById("screenVal");
+    const resDay = document.getElementById("resDay");
+    const resMonth = document.getElementById("resMonth");
+    const resYear = document.getElementById("resYear");
 
-    let frame = 0;
-    const updateRotation = () => {
-      frame = 0;
-      const bounds = stage.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
-      block.style.setProperty("--scroll-rotation", `${(progress - 0.5) * 16}deg`);
-    };
-    const scheduleUpdate = () => {
-      if (!frame) frame = window.requestAnimationFrame(updateRotation);
-    };
+    if (!range || !display) return;
 
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate, { passive: true });
-    updateRotation();
-  })();
-
-  // Interactive Screen Time Calculator
-  (() => {
-    const slider = document.getElementById("screenTimeRange");
-    const display = document.getElementById("screenTimeDisplay");
-    const savedDay = document.getElementById("savedDay");
-    const savedMonth = document.getElementById("savedMonth");
-    const savedYear = document.getElementById("savedYear");
-
-    if (!slider || !display) return;
-
-    const updateCalc = () => {
-      const val = parseFloat(slider.value);
+    const calcTime = () => {
+      const val = parseFloat(range.value);
       display.textContent = `${val.toFixed(1)} ${val === 1 ? "час" : (val < 5 ? "часа" : "часов")}`;
-      
-      // Roughly 50% of screen time is mindless doomscrolling
-      const savedH = Math.round(val * 0.52 * 10) / 10;
-      const savedM = Math.round(savedH * 30);
-      const savedY = Math.round((savedH * 365) / 24);
 
-      savedDay.textContent = `${savedH} ч`;
-      savedMonth.textContent = `${savedM} ч`;
-      savedYear.textContent = `${savedY} ${savedY % 10 === 1 && savedY !== 11 ? "день" : (savedY % 10 >= 2 && savedY % 10 <= 4 && (savedY < 10 || savedY > 20) ? "дня" : "дней")}`;
+      const savedPerDay = Math.round(val * 0.52 * 10) / 10;
+      const savedPerMonth = Math.round(savedPerDay * 30);
+      const savedPerYear = Math.round((savedPerDay * 365) / 24);
+
+      resDay.textContent = `${savedPerDay} ч`;
+      resMonth.textContent = `${savedPerMonth} ч`;
+      resYear.textContent = `${savedPerYear} ${savedPerYear % 10 === 1 && savedPerYear !== 11 ? "день" : (savedPerYear % 10 >= 2 && savedPerYear % 10 <= 4 && (savedPerYear < 10 || savedPerYear > 20) ? "дня" : "дней")}`;
     };
 
-    slider.addEventListener("input", updateCalc);
-    updateCalc();
+    range.addEventListener("input", calcTime);
+    calcTime();
   })();
 
-  // Sticky Mobile Bar
+  // Mobile Sticky Bar on scroll
   (() => {
-    const sticky = document.getElementById("stickyCta");
+    const sticky = document.getElementById("mobileSticky");
     if (!sticky) return;
 
-    const onScroll = () => {
-      if (window.scrollY > 480) {
-        sticky.classList.add("visible");
+    const checkScroll = () => {
+      if (window.scrollY > 440) {
+        sticky.classList.add("is-visible");
       } else {
-        sticky.classList.remove("visible");
+        sticky.classList.remove("is-visible");
       }
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", checkScroll, { passive: true });
   })();
 
-  // Waitlist Form Handler
-  function handleWaitlist(e, form) {
+  // Form Submission
+  function handlePreorder(e, form) {
     e.preventDefault();
     const input = form.querySelector('input[name="contact"]');
     const val = input.value.trim();
     if (!val) return;
 
     try {
-      const existing = JSON.parse(localStorage.getItem("focusblock_waitlist") || "[]");
-      existing.push({ contact: val, date: new Date().toISOString() });
-      localStorage.setItem("focusblock_waitlist", JSON.stringify(existing));
+      const list = JSON.parse(localStorage.getItem("focusblock_waitlist") || "[]");
+      list.push({ contact: val, date: new Date().toISOString() });
+      localStorage.setItem("focusblock_waitlist", JSON.stringify(list));
     } catch (_) {}
 
-    const row = form.querySelector('.form-row');
-    const successMsg = form.querySelector('.form-success-msg');
-    const note = form.querySelector('.form-note');
-    if (row) row.style.display = 'none';
-    if (note) note.style.display = 'none';
-    if (successMsg) successMsg.style.display = 'block';
+    const fields = form.querySelector('.form-fields');
+    const legal = form.querySelector('.form-legal');
+    const alertBox = form.querySelector('.form-success-alert');
+
+    if (fields) fields.style.display = 'none';
+    if (legal) legal.style.display = 'none';
+    if (alertBox) alertBox.style.display = 'block';
   }
 </script>
 </body>
