@@ -9,8 +9,8 @@
   --light: #f4f4f0;
   --light-muted: rgba(244, 244, 240, 0.68);
   --light-hint: rgba(244, 244, 240, 0.46);
-  --light-line: rgba(244, 244, 240, 0.13);
-  --light-line-strong: rgba(244, 244, 240, 0.28);
+  --light-line: rgba(244, 244, 240, 0.12);
+  --light-line-strong: rgba(244, 244, 240, 0.24);
   --sage: #b9c1a3;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -93,8 +93,8 @@ p {
    ========================================================= */
 .site-header {
   position: relative;
-  z-index: 20;
-  min-height: 84px;
+  z-index: 30;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,7 +109,7 @@ p {
 
 .brand img {
   display: block;
-  width: 156px;
+  width: 152px;
   height: auto;
 }
 
@@ -140,10 +140,10 @@ p {
 .header-cta {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
-  padding: 8px 18px;
+  min-height: 38px;
+  padding: 7px 16px;
   border: 1px solid var(--light-line-strong);
-  border-radius: 4px;
+  border-radius: 8px;
   color: var(--light);
   font-size: 14px;
   font-weight: 500;
@@ -158,28 +158,41 @@ p {
 }
 
 /* =========================================================
-   Hero — Form on left, borderless Focus Block on right
+   Unified Hero with Scroll-Driven iPhone + Focus Block Stage
    ========================================================= */
-.hero {
-  min-height: min(820px, calc(100svh - 84px));
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+.hero-track {
+  position: relative;
+  height: 195svh;
+  background: var(--obsidian);
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  display: flex;
   align-items: center;
-  gap: 48px;
-  padding-block: 56px 88px;
+  padding-block: 36px 48px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: 56px;
 }
 
 .hero-copy {
-  max-width: 600px;
+  max-width: 540px;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .hero-status {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 9px;
+  margin-bottom: 22px;
   font-size: 14px;
   color: var(--light-muted);
 }
@@ -192,54 +205,58 @@ p {
 }
 
 h1 {
-  font-size: clamp(46px, 5.6vw, 80px);
-  line-height: 0.96;
-  margin-bottom: 24px;
+  font-size: clamp(44px, 5.2vw, 76px);
+  line-height: 0.97;
+  margin-bottom: 22px;
   color: var(--light);
 }
 
 .hero-lead {
-  max-width: 500px;
-  margin-bottom: 36px;
+  max-width: 480px;
+  margin-bottom: 32px;
   color: var(--light-muted);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
 }
 
-/* Pre-order form: wide enough so "Telegram @username или почта" never clips */
+/* Sleek unified Web3-style single-bar pre-order input (strict 50px height!) */
 .preorder-block {
-  max-width: 580px;
-  scroll-margin-top: 28px;
+  max-width: 492px;
+  scroll-margin-top: 32px;
 }
 
 .preorder-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
-.preorder-row {
+.preorder-bar {
   display: flex;
-  gap: 10px;
-}
-
-.preorder-input {
-  flex: 1 1 280px;
-  min-width: 0;
-  min-height: 52px;
-  padding: 0 16px;
-  background: var(--slate);
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  background: #14161a;
   border: 1px solid var(--light-line-strong);
-  border-radius: 4px;
-  color: var(--light);
-  font-size: 16px;
-  outline: none;
+  border-radius: 10px;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.preorder-input:focus {
-  border-color: var(--light);
-  background: #181b1f;
+.preorder-bar:focus-within {
+  border-color: rgba(244, 244, 240, 0.55);
+  background: #171a1f;
+}
+
+.preorder-input {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  background: transparent;
+  border: 0;
+  color: var(--light);
+  font-size: 16px;
+  outline: none;
 }
 
 .preorder-input::placeholder {
@@ -248,13 +265,13 @@ h1 {
 
 .preorder-btn {
   flex: 0 0 auto;
-  min-height: 52px;
-  padding: 0 22px;
+  height: 42px;
+  padding: 0 18px;
   background: var(--light);
   color: var(--obsidian);
-  border: 1px solid var(--light);
-  border-radius: 4px;
-  font-size: 15px;
+  border: 0;
+  border-radius: 7px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -281,8 +298,8 @@ h1 {
 }
 
 .consent-row input[type="checkbox"] {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   margin: 2px 0 0;
   flex-shrink: 0;
   accent-color: var(--sage);
@@ -295,7 +312,7 @@ h1 {
 
 .form-success {
   display: none;
-  padding: 16px 0;
+  padding: 14px 0;
   border-top: 1px solid var(--sage);
   border-bottom: 1px solid var(--light-line);
   color: var(--light);
@@ -304,380 +321,691 @@ h1 {
 }
 
 .hero-meta {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 14px;
   color: var(--light-hint);
 }
 
-/* Seamless borderless Focus Block right next to the form */
-.hero-stage {
-  position: relative;
+.hero-scroll-cue {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--light-line);
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: transparent;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--light-muted);
 }
 
-.hero-product-img {
-  display: block;
-  width: 108%;
-  max-width: 580px;
-  height: auto;
-  background: transparent;
-  mix-blend-mode: lighten;
-  mask-image: radial-gradient(ellipse 68% 68% at 50% 50%, #000 58%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 68% 68% at 50% 50%, #000 58%, transparent 100%);
-  transform: rotate(var(--scroll-rotation, 0deg));
-  transform-origin: center;
-  will-change: transform;
+.scroll-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--light-muted);
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-track.is-locked .scroll-indicator {
+  background: var(--sage);
+  border-color: var(--sage);
 }
 
 /* =========================================================
-   Scroll-Driven Choreography: Dark iPhone taps Focus Block
+   Right Column: Real Focus Block + Photorealistic Dark iPhone 16 Pro
    ========================================================= */
-.scroll-story {
-  position: relative;
-  height: 230svh;
-  background: var(--obsidian);
-  border-top: 1px solid var(--light-line);
-  border-bottom: 1px solid var(--light-line);
-  scroll-margin-top: 24px;
-}
-
-.scroll-sticky {
-  position: sticky;
-  top: 0;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding-block: 56px;
-}
-
-.scroll-grid {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.scroll-copy h2 {
-  font-size: clamp(36px, 4.4vw, 56px);
-  line-height: 1.02;
-  margin-bottom: 20px;
-}
-
-.scroll-lead {
-  font-size: 17px;
-  color: var(--light-muted);
-  max-width: 440px;
-  margin-bottom: 36px;
-  line-height: 1.6;
-}
-
-.scroll-steps {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid var(--light-line);
-}
-
-.scroll-step {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--light-line);
-  opacity: 0.42;
-  transition: opacity 0.35s ease;
-}
-
-.scroll-step.is-active {
-  opacity: 1;
-}
-
-.scroll-step strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--light);
-  margin-bottom: 4px;
-}
-
-.scroll-step.is-active strong {
-  color: var(--sage);
-}
-
-.scroll-step span {
-  display: block;
-  font-size: 15px;
-  color: var(--light-muted);
-  line-height: 1.55;
-}
-
-/* Seamless Dark Stage for Scroll Animation */
-.scroll-stage {
+.hero-visual {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  height: 500px;
+  max-width: 560px;
+  height: 600px;
   margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Real Focus Block anchored upper-right, no background box */
-.story-block {
+/* Subtle architectural ambient light behind hardware (Web3 hardware craft) */
+.hero-ambient {
   position: absolute;
-  top: 14px;
-  right: 12px;
-  width: 210px;
+  top: 24%;
+  right: 8%;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 193, 163, 0.1) 0%, rgba(255, 255, 255, 0.03) 42%, transparent 72%);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.6s var(--ease-out);
+  opacity: 0.65;
+}
+
+.hero-track.is-locked .hero-ambient {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* Real Focus Block photo seamlessly integrated with zero box/background */
+.hero-block {
+  position: absolute;
+  top: 4px;
+  right: -12px;
+  width: 268px;
   z-index: 3;
   pointer-events: none;
+  transform: scale(var(--block-scale, 1));
+  transition: transform 0.35s var(--ease-out);
 }
 
-.story-block-img {
+.hero-block-img {
   display: block;
   width: 100%;
   height: auto;
   mix-blend-mode: lighten;
-  mask-image: radial-gradient(ellipse 66% 66% at 50% 50%, #000 56%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 66% 66% at 50% 50%, #000 56%, transparent 100%);
+  mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, #000 55%, transparent 100%);
 }
 
-/* Concentric wave at contact point */
-.story-wave {
+/* Concentric NFC contact wave centered on the Focus Block's white inlay */
+.contact-wave {
   position: absolute;
-  top: 86px;
+  top: 90px;
   right: 112px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 1.5px solid var(--sage);
   opacity: 0;
   pointer-events: none;
-  z-index: 8;
+  z-index: 10;
 }
 
-.scroll-stage.pulse-active .story-wave {
-  animation: haptic-wave 0.9s var(--ease-out) forwards;
+.contact-wave-2 {
+  border-color: rgba(244, 244, 240, 0.5);
 }
 
-@keyframes haptic-wave {
+.hero-visual.pulse-active .contact-wave {
+  animation: nfc-ring 0.95s var(--ease-out) forwards;
+}
+
+.hero-visual.pulse-active .contact-wave-2 {
+  animation: nfc-ring 1.15s 0.14s var(--ease-out) forwards;
+}
+
+@keyframes nfc-ring {
   0% { transform: scale(1); opacity: 0.9; }
-  100% { transform: scale(10); opacity: 0; }
+  100% { transform: scale(11); opacity: 0; }
 }
 
-/* Dark Titanium iPhone — glides toward block on scroll */
-.story-iphone {
+/* =========================================================
+   Photorealistic iPhone 16 Pro (Black Titanium) Hardware Chassis
+   ========================================================= */
+.iphone-rig {
   position: absolute;
-  bottom: 12px;
-  left: 36px;
-  width: 248px;
-  height: 446px;
+  bottom: 8px;
+  left: 24px;
+  width: 274px;
+  height: 558px;
   z-index: 6;
-  transform-origin: bottom center;
-  transform: translate3d(var(--phone-x, 0px), var(--phone-y, 0px), 0) rotate(var(--phone-rot, 0deg));
+  transform-origin: center 65%;
+  transform:
+    translate3d(var(--px, 0px), var(--py, 0px), 0)
+    rotate(var(--pr, 0deg))
+    rotateY(var(--pry, -7deg))
+    rotateX(var(--prx, 3deg));
+  transform-style: preserve-3d;
   will-change: transform;
 }
 
-.iphone-frame {
+/* Machined Titanium Outer Chassis */
+.iphone-chassis {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 44px;
-  background: linear-gradient(160deg, #16181c 0%, #0a0b0d 55%, #111317 100%);
-  border: 4px solid #2b2f36;
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.78), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  padding: 14px 15px 14px;
+  border-radius: 50px;
+  padding: 4px;
+  background: linear-gradient(
+    140deg,
+    #525760 0%,
+    #25282e 16%,
+    #111317 44%,
+    #2c3038 74%,
+    #5a606a 92%,
+    #292d34 100%
+  );
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.85),
+    0 12px 24px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+/* Physical machined side buttons */
+.hw-btn {
+  position: absolute;
+  background: linear-gradient(180deg, #4b5059 0%, #24272d 50%, #3d414a 100%);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.hw-action {
+  left: -3px;
+  top: 106px;
+  width: 3px;
+  height: 24px;
+  border-radius: 2px 0 0 2px;
+}
+
+.hw-vol-up {
+  left: -3px;
+  top: 146px;
+  width: 3px;
+  height: 44px;
+  border-radius: 2px 0 0 2px;
+}
+
+.hw-vol-down {
+  left: -3px;
+  top: 202px;
+  width: 3px;
+  height: 44px;
+  border-radius: 2px 0 0 2px;
+}
+
+.hw-power {
+  right: -3px;
+  top: 168px;
+  width: 3px;
+  height: 66px;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Uniform Black Bezel */
+.iphone-bezel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 46px;
+  background: #000000;
+  padding: 9px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* OLED Display with authentic dark iOS 18 depth wallpaper */
+.iphone-oled {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 38px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 55% at 22% 18%, rgba(62, 74, 108, 0.42) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 55% at 82% 76%, rgba(112, 92, 78, 0.24) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 45% at 50% 48%, rgba(30, 35, 46, 0.7) 0%, transparent 72%),
+    linear-gradient(180deg, #0b0e14 0%, #07090d 55%, #0c0e12 100%);
+  padding: 12px 14px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.iphone-top {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Subtle ceramic shield specular reflection */
+.iphone-glass-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: 38px;
+  background: linear-gradient(
+    122deg,
+    rgba(255, 255, 255, 0.075) 0%,
+    rgba(255, 255, 255, 0.02) 28%,
+    transparent 30%
+  );
+  pointer-events: none;
+  z-index: 12;
 }
 
-.iphone-island {
-  width: 72px;
-  height: 18px;
-  border-radius: 10px;
-  background: #000000;
-  margin-inline: auto;
+/* iOS Status Bar + Dynamic Island */
+.ios-top {
+  position: relative;
+  z-index: 6;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 6px;
-}
-
-.island-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.iphone-statusbar {
-  display: flex;
   justify-content: space-between;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--light-muted);
+  height: 24px;
   padding-inline: 6px;
 }
 
-.iphone-status-pill {
-  padding: 8px 10px;
-  border-radius: 9px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--light-line);
+.ios-time {
   font-size: 12px;
-  font-weight: 500;
-  text-align: center;
-  color: var(--light-muted);
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
-.iphone-apps-heading {
-  font-size: 11px;
-  color: var(--light-hint);
-  margin-bottom: 8px;
-  padding-left: 2px;
+/* Authentic Dynamic Island — expands smoothly when Focus activates! */
+.dynamic-island {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 22px;
+  border-radius: 14px;
+  background: #000000;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7px;
+  overflow: hidden;
+  transition: width 0.45s var(--ease-out), height 0.45s var(--ease-out), padding 0.45s var(--ease-out);
+  z-index: 10;
 }
 
-.iphone-apps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.island-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sage);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s ease, transform 0.35s var(--ease-out);
 }
 
-.app-cell {
+.island-switch {
+  width: 14px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--sage);
   position: relative;
-  padding: 13px 8px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7px;
-  transition: background-color 0.35s ease;
+  flex-shrink: 0;
 }
 
-.app-glyph {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 0.35s ease, opacity 0.35s ease;
+.island-switch::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0b0c0e;
 }
 
-.app-glyph svg {
-  width: 19px;
-  height: 19px;
+/* Optical front camera lens inside Dynamic Island */
+.island-lens {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 38%, #2a3e6b 0%, #0d1324 55%, #04060b 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.hero-track.is-locked .dynamic-island {
+  width: 148px;
+  padding: 0 9px;
+}
+
+.hero-track.is-locked .island-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* iOS Status Icons (Signal + Wi-Fi + Battery) */
+.ios-indicators {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ios-indicators svg {
+  display: block;
   fill: #ffffff;
 }
 
-.glyph-reels { background: #b84267; }
-.glyph-video { background: #c23b32; }
-.glyph-feed  { background: #377fb2; }
-.glyph-games { background: #6b52a3; }
-
-.app-dot {
-  position: absolute;
-  top: 9px;
-  right: 11px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #e05a4f;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+/* Focus Block Real iOS Widget (2x4 dark translucent card) */
+.fb-widget {
+  position: relative;
+  z-index: 5;
+  margin-top: 12px;
+  padding: 13px 14px;
+  border-radius: 20px;
+  background: rgba(24, 27, 34, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
-.app-name {
-  font-size: 11px;
-  color: var(--light);
+.hero-track.is-locked .fb-widget {
+  background: rgba(31, 36, 34, 0.88);
+  border-color: rgba(185, 193, 163, 0.35);
+}
+
+.fb-widget-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fb-widget-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.fb-widget-sub {
+  font-size: 10px;
+  color: rgba(244, 244, 240, 0.62);
   transition: color 0.3s ease;
 }
 
-.app-hourglass {
+.hero-track.is-locked .fb-widget-sub {
+  color: var(--sage);
+}
+
+/* Brand toggle pill inside widget — mirrors real Focus Block logo & shield! */
+.fb-toggle {
+  width: 42px;
+  height: 24px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 3px;
+  flex-shrink: 0;
+  transition: background-color 0.35s var(--ease-out);
+}
+
+.fb-toggle-knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--paper);
+  transform: translateX(0);
+  transition: transform 0.38s var(--ease-out), background-color 0.35s ease;
+}
+
+.hero-track.is-locked .fb-toggle {
+  background: var(--paper);
+}
+
+.hero-track.is-locked .fb-toggle-knob {
+  transform: translateX(18px);
+  background: #2e3338;
+}
+
+/* Realistic 4-Column iOS SpringBoard App Grid */
+.ios-grid {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px 10px;
+  margin-top: 14px;
+}
+
+.ios-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.ios-icon {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s var(--ease-out);
+}
+
+.ios-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+/* Authentic iOS app palettes */
+.ic-ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 65%, #285aeb 92%);
+}
+
+.ic-yt {
+  background: linear-gradient(160deg, #ff2e2e 0%, #c80e0e 100%);
+}
+
+.ic-tg {
+  background: linear-gradient(180deg, #37aee2 0%, #1e96c8 100%);
+}
+
+.ic-tt {
+  background: linear-gradient(155deg, #21242b 0%, #090a0d 100%);
+}
+
+.ic-x {
+  background: linear-gradient(155deg, #262930 0%, #0d0e11 100%);
+}
+
+.ic-games {
+  background: linear-gradient(155deg, #8b5cf6 0%, #5b21b6 100%);
+}
+
+.ic-notes {
+  background: linear-gradient(180deg, #f5c542 0%, #f5c542 28%, #f7f7f4 28%, #ebebe6 100%);
+}
+
+.ic-notes-lines {
+  width: 24px;
+  height: 16px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ic-notes-lines span {
+  display: block;
+  height: 1.5px;
+  background: rgba(17, 19, 21, 0.24);
+  border-radius: 1px;
+}
+
+.ic-cal {
+  background: #f5f5f2;
+  flex-direction: column;
+  gap: 0;
+  color: #111315;
+}
+
+.ic-cal-day {
+  font-size: 8px;
+  font-weight: 700;
+  color: #d93829;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.ic-cal-num {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #111315;
+}
+
+/* Red iOS notification badges */
+.ios-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 99px;
+  background: #ff3b30;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  transition: transform 0.28s var(--ease-out), opacity 0.25s ease;
+  z-index: 3;
+}
+
+/* Authentic iOS Screen Time dim overlay + hourglass on locked apps */
+.ios-shield {
   position: absolute;
   inset: 0;
-  border-radius: 15px;
-  background: rgba(11, 12, 14, 0.68);
+  border-radius: 11px;
+  background: rgba(10, 11, 14, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.3s ease, transform 0.3s var(--ease-out);
+  transform: scale(0.85);
+  transition: opacity 0.32s ease, transform 0.35s var(--ease-out);
+  z-index: 2;
 }
 
-.app-hourglass svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--light);
+.ios-shield svg {
+  width: 18px;
+  height: 18px;
+  fill: rgba(244, 244, 240, 0.92);
 }
 
-.iphone-dock {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 9px 10px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.dock-glyph {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dock-glyph svg {
-  width: 15px;
-  height: 15px;
-  fill: #ffffff;
-}
-
-.dock-phone { background: #3d9960; }
-.dock-maps  { background: #3d75b8; }
-.dock-msg   { background: #4a63b8; }
-
-.iphone-dock-label {
-  font-size: 10px;
-  color: var(--light-hint);
+.ios-label {
+  font-size: 9.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
-  margin-top: 6px;
+  line-height: 1.1;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
 }
 
-/* Locked state when phone touches block during scroll */
-.scroll-stage.is-locked .island-dot {
-  background: var(--sage);
+/* Staggered lock cascade on distracting apps */
+.hero-track.is-locked .is-distracting .ios-icon {
+  filter: grayscale(100%) brightness(0.5);
+  transform: scale(0.95);
 }
 
-.scroll-stage.is-locked .iphone-status-pill {
-  background: rgba(185, 193, 163, 0.14);
-  border-color: rgba(185, 193, 163, 0.45);
-  color: var(--sage);
+.hero-track.is-locked .is-distracting .ios-shield {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.scroll-stage.is-locked .app-glyph {
-  filter: grayscale(100%) brightness(0.55);
-}
-
-.scroll-stage.is-locked .app-dot {
+.hero-track.is-locked .is-distracting .ios-badge {
   opacity: 0;
   transform: scale(0);
 }
 
-.scroll-stage.is-locked .app-name {
-  color: var(--light-hint);
+.hero-track.is-locked .is-distracting .ios-label {
+  opacity: 0.42;
 }
 
-.scroll-stage.is-locked .app-hourglass {
+/* Focus Block Shield Toast Pill inside iOS screen when locked */
+.ios-lock-toast {
+  position: relative;
+  z-index: 5;
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding: 9px 11px;
+  border-radius: 14px;
+  background: rgba(46, 51, 56, 0.88);
+  border: 1px solid rgba(244, 244, 240, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transition: opacity 0.35s ease, transform 0.4s var(--ease-out);
+}
+
+.hero-track.is-locked .ios-lock-toast {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0) scale(1);
+}
+
+.toast-mark {
+  width: 24px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.toast-text {
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(244, 244, 240, 0.86);
+}
+
+.toast-text strong {
+  display: block;
+  font-size: 10.5px;
+  color: var(--paper);
+}
+
+/* Authentic Translucent iOS Dock (Always unlocked essential apps) */
+.ios-dock {
+  position: relative;
+  z-index: 5;
+  padding: 9px 10px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.ios-dock .ios-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10.5px;
+}
+
+.ic-phone {
+  background: linear-gradient(180deg, #5bf675 0%, #24c443 100%);
+}
+
+.ic-maps {
+  background: linear-gradient(160deg, #4ea4ff 0%, #1d6de0 100%);
+}
+
+.ic-msg {
+  background: linear-gradient(180deg, #56f372 0%, #1fc13f 100%);
+}
+
+.ic-bank {
+  background: linear-gradient(160deg, #f3d24f 0%, #d4a61c 100%);
+}
+
+.ic-bank svg {
+  fill: #141619;
+}
+
+.ios-home-bar {
+  width: 96px;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.72);
+  margin: 8px auto 0;
+  position: relative;
+  z-index: 6;
 }
 
 /* =========================================================
@@ -768,7 +1096,6 @@ h1 {
   width: 37%;
 }
 
-/* Table theme: Warm Paper */
 .chapter-paper .compare-table {
   border-top: 1px solid rgba(17, 19, 21, 0.25);
 }
@@ -800,7 +1127,6 @@ h1 {
   font-weight: 600;
 }
 
-/* Table theme: Obsidian */
 .chapter-dark .compare-table {
   border-top: 1px solid var(--light-line-strong);
 }
@@ -854,8 +1180,8 @@ h1 {
   max-width: 480px;
   height: auto;
   mix-blend-mode: lighten;
-  mask-image: radial-gradient(ellipse 68% 68% at 50% 50%, #000 58%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 68% 68% at 50% 50%, #000 58%, transparent 100%);
+  mask-image: radial-gradient(ellipse 66% 66% at 50% 50%, #000 56%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 66% 66% at 50% 50%, #000 56%, transparent 100%);
 }
 
 .box-copy h2 {
@@ -897,7 +1223,7 @@ h1 {
 }
 
 /* =========================================================
-   FAQ (Warm Paper, hairline accordion)
+   FAQ (Warm Paper)
    ========================================================= */
 .faq-layout {
   display: grid;
@@ -988,7 +1314,7 @@ h1 {
    ========================================================= */
 .closing-section {
   position: relative;
-  padding-block: 120px;
+  padding-block: 116px;
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid var(--light-line);
@@ -1009,7 +1335,7 @@ h1 {
 .closing-inner {
   position: relative;
   z-index: 2;
-  max-width: 580px;
+  max-width: 540px;
   margin-inline: auto;
 }
 
@@ -1021,15 +1347,15 @@ h1 {
 }
 
 .closing-inner h2 {
-  font-size: clamp(38px, 4.8vw, 60px);
-  line-height: 1.02;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.03;
   margin-bottom: 18px;
 }
 
 .closing-inner > p {
   color: var(--light-muted);
   font-size: 17px;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .closing-form-wrap {
@@ -1109,7 +1435,7 @@ h1 {
   padding: 8px 16px;
   background: var(--light);
   color: var(--obsidian);
-  border-radius: 4px;
+  border-radius: 7px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -1118,45 +1444,26 @@ h1 {
 /* =========================================================
    Responsive
    ========================================================= */
-@media (max-width: 1060px) {
-  .preorder-row {
-    flex-direction: column;
-  }
-  .preorder-btn {
-    width: 100%;
-  }
-}
-
-@media (max-width: 980px) {
+@media (max-width: 1020px) {
   .wrap {
     width: calc(100% - 48px);
   }
-  .hero,
-  .scroll-grid,
+  .hero-track {
+    height: auto;
+  }
+  .hero-sticky {
+    position: relative;
+    min-height: unset;
+    padding-block: 44px 72px;
+  }
+  .hero-grid,
   .box-grid,
   .faq-layout {
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 48px;
   }
-  .hero {
-    min-height: unset;
-    padding-block: 44px 64px;
-  }
-  .hero-product-img {
-    width: 100%;
-    max-width: 440px;
-  }
-  .scroll-story {
-    height: 210svh;
-  }
-  .scroll-sticky {
-    padding-block: 32px;
-  }
-  .scroll-steps {
+  .hero-scroll-cue {
     display: none;
-  }
-  .scroll-lead {
-    margin-bottom: 12px;
   }
   .chapter-paper,
   .chapter-dark {
@@ -1175,17 +1482,37 @@ h1 {
   .header-nav {
     display: none;
   }
-  .scroll-stage {
-    height: 430px;
+  .hero-visual {
+    height: 510px;
+    max-width: 390px;
   }
-  .story-block {
-    width: 164px;
-    right: 0;
+  .hero-block {
+    width: 186px;
+    right: -12px;
+    top: 0;
   }
-  .story-iphone {
-    left: 12px;
-    width: 216px;
-    height: 394px;
+  .contact-wave {
+    top: 66px;
+    right: 76px;
+  }
+  .iphone-rig {
+    left: 6px;
+    bottom: 0;
+    width: 244px;
+    height: 496px;
+  }
+  .ios-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .ios-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .ios-dock .ios-icon {
+    width: 38px;
+    height: 38px;
   }
   .box-specs li {
     grid-template-columns: 1fr;
@@ -1230,14 +1557,29 @@ h1 {
   }
 }
 
+@media (max-width: 520px) {
+  .preorder-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 6px;
+    gap: 6px;
+  }
+  .preorder-input,
+  .preorder-btn {
+    flex: none;
+    width: 100%;
+    height: 44px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .scroll-story {
+  .hero-track {
     height: auto;
   }
-  .scroll-sticky {
+  .hero-sticky {
     position: relative;
     min-height: unset;
-    padding-block: 80px;
+    padding-block: 56px 72px;
   }
   *,
   *::before,
