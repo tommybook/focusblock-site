@@ -18,11 +18,11 @@
 
 <header class="site-header wrap">
   <a class="brand" href="/" aria-label="Focus Block — главная">
-    <img src="/img/logo.svg" alt="Focus Block" width="156" height="24">
+    <img src="/img/logo.svg" alt="Focus Block" width="152" height="23">
   </a>
   <nav class="header-nav" aria-label="Навигация">
-    <a href="#how">Как работает</a>
     <a href="#why">Сравнение</a>
+    <a href="#pricing">Без подписок</a>
     <a href="#box">Комплект</a>
     <a href="#faq">Вопросы</a>
   </nav>
@@ -30,148 +30,203 @@
 </header>
 
 <main>
-  <!-- Hero: Form on left, borderless Focus Block directly to the right -->
-  <section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <div class="hero-status">
-        <span class="hero-status-dot" aria-hidden="true"></span>
-        <span>Первый тираж — 100 штук, скоро на&nbsp;Ozon</span>
-      </div>
-      <h1 id="hero-title">Выключатель думскроллинга</h1>
-      <p class="hero-lead">Приложите iPhone к&nbsp;блоку на&nbsp;холодильнике — соцсети и&nbsp;лишние приложения закрыты. Вернуть их можно, только встав с&nbsp;дивана и&nbsp;подойдя к&nbsp;блоку ещё раз.</p>
-
-      <div class="preorder-block" id="order">
-        <form class="preorder-form" onsubmit="handlePreorder(event, this)">
-          <div class="preorder-row">
-            <label for="hero-contact" class="sr-only">Telegram или электронная почта</label>
-            <input id="hero-contact" type="text" name="contact" class="preorder-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false">
-            <button type="submit" class="preorder-btn">Получить скидку 20%</button>
+  <!-- Unified Hero: Left copy + compact form, Right seamless Focus Block + photorealistic Dark Titanium iPhone -->
+  <section class="hero-track" id="heroTrack" aria-labelledby="hero-title">
+    <div class="hero-sticky">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="hero-status">
+            <span class="hero-status-dot" aria-hidden="true"></span>
+            <span>Первый тираж — 100 штук, скоро на&nbsp;Ozon</span>
           </div>
-          <label class="consent-row">
-            <input type="checkbox" name="consent" required>
-            <span>Соглашаюсь с&nbsp;<a href="/privacy/">политикой конфиденциальности</a> и&nbsp;на&nbsp;одно уведомление о&nbsp;старте продаж</span>
-          </label>
-          <div class="form-success" role="status" aria-live="polite">
-            Контакт записан. Мы&nbsp;пришлём закрытую ссылку на&nbsp;Ozon со&nbsp;скидкой 20% за&nbsp;сутки до&nbsp;старта.
+          <h1 id="hero-title">Выключатель думскроллинга</h1>
+          <p class="hero-lead">Приложите iPhone к&nbsp;блоку на&nbsp;холодильнике — соцсети и&nbsp;лишние приложения закрыты. Вернуть их можно, только встав с&nbsp;дивана и&nbsp;подойдя к&nbsp;блоку ещё раз.</p>
+
+          <div class="preorder-block" id="order">
+            <form class="preorder-form" onsubmit="handlePreorder(event, this)">
+              <div class="preorder-bar">
+                <label for="hero-contact" class="sr-only">Telegram или электронная почта</label>
+                <input id="hero-contact" type="text" name="contact" class="preorder-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false" enterkeyhint="send">
+                <button type="submit" class="preorder-btn">Получить −20%</button>
+              </div>
+              <label class="consent-row">
+                <input type="checkbox" name="consent" required>
+                <span>Соглашаюсь с&nbsp;<a href="/privacy/">политикой конфиденциальности</a> и&nbsp;на&nbsp;одно уведомление о&nbsp;старте продаж</span>
+              </label>
+              <div class="form-success" role="status" aria-live="polite">
+                Контакт записан. Мы&nbsp;пришлём закрытую ссылку на&nbsp;Ozon со&nbsp;скидкой 20% за&nbsp;сутки до&nbsp;старта.
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
 
-      <div class="hero-meta">
-        <span>Без подписок, батареек и&nbsp;зарядки — для iPhone на&nbsp;iOS 17 и&nbsp;новее</span>
-      </div>
-    </div>
+          <div class="hero-meta">
+            <span>Без подписок, батареек и&nbsp;зарядки — для iPhone на&nbsp;iOS 17 и&nbsp;новее</span>
+          </div>
 
-    <div class="hero-stage" aria-label="Focus Block — графитовый физический блок">
-      <img class="hero-product-img" src="/img/block.jpg" width="1080" height="760" fetchpriority="high" alt="Focus Block — компактный графитовый блок со светлой круглой вставкой и рифлёным боком">
-    </div>
-  </section>
-
-  <!-- Scroll-Driven Animation: Dark iPhone taps Focus Block and locks apps -->
-  <section class="scroll-story" id="how" aria-labelledby="how-title">
-    <div class="scroll-sticky">
-      <div class="wrap scroll-grid">
-        <div class="scroll-copy">
-          <h2 id="how-title">Одно касание — и&nbsp;телефон снова инструмент</h2>
-          <p class="scroll-lead" id="storyLead">Выберите в&nbsp;приложении то, что забирает внимание, и&nbsp;повесьте блок подальше от&nbsp;рабочего стола или дивана.</p>
-
-          <ul class="scroll-steps">
-            <li class="scroll-step is-active" data-step="0">
-              <strong>Подносите iPhone к&nbsp;блоку</strong>
-              <span>Рилсы, видео, ленты и&nbsp;игры готовы уйти на&nbsp;паузу одним движением.</span>
-            </li>
-            <li class="scroll-step" data-step="1">
-              <strong>Касание — и&nbsp;лишнее закрыто</strong>
-              <span>Отвлекающие приложения мгновенно блокируются. Звонки, карты и&nbsp;банки остаются открытыми.</span>
-            </li>
-            <li class="scroll-step" data-step="2">
-              <strong>Чтобы открыть, нужно встать</strong>
-              <span>Пока вы идёте к&nbsp;блоку на&nbsp;холодильнике, импульс полистать ленту проходит сам.</span>
-            </li>
-          </ul>
+          <div class="hero-scroll-cue" id="heroScrollCue">
+            <span class="scroll-indicator" aria-hidden="true"></span>
+            <span id="heroScrollText">Прокрутите вниз — посмотрите, как телефон блокирует лишнее у&nbsp;блока</span>
+          </div>
         </div>
 
-        <div class="scroll-stage" id="scrollStage" aria-label="Анимация при прокрутке: тёмный iPhone прикладывается к Focus Block и отвлекающие приложения блокируются">
-          <div class="story-block">
-            <img src="/img/block.jpg" width="1080" height="760" alt="Focus Block" class="story-block-img">
+        <!-- Unified Visual Stage: Real Focus Block + Photorealistic iPhone 16 Pro -->
+        <div class="hero-visual" id="heroVisual" onclick="manualToggleLock()" aria-label="Focus Block и тёмный iPhone: при прокрутке телефон прикладывается к блоку и отвлекающие приложения блокируются">
+          <div class="hero-ambient" aria-hidden="true"></div>
+
+          <div class="hero-block">
+            <img class="hero-block-img" src="/img/block.jpg" width="1080" height="760" fetchpriority="high" alt="Focus Block — компактный графитовый блок со светлой круглой вставкой">
           </div>
 
-          <div class="story-wave" id="storyWave" aria-hidden="true"></div>
+          <div class="contact-wave" aria-hidden="true"></div>
+          <div class="contact-wave contact-wave-2" aria-hidden="true"></div>
 
-          <div class="story-iphone" id="storyIphone">
-            <div class="iphone-frame">
-              <div class="iphone-top">
-                <div class="iphone-island" aria-hidden="true">
-                  <span class="island-dot" aria-hidden="true"></span>
+          <div class="iphone-rig" id="iphoneRig">
+            <div class="iphone-chassis">
+              <span class="hw-btn hw-action" aria-hidden="true"></span>
+              <span class="hw-btn hw-vol-up" aria-hidden="true"></span>
+              <span class="hw-btn hw-vol-down" aria-hidden="true"></span>
+              <span class="hw-btn hw-power" aria-hidden="true"></span>
+
+              <div class="iphone-bezel">
+                <div class="iphone-oled">
+                  <div class="iphone-glass-sheen" aria-hidden="true"></div>
+
+                  <!-- Status Bar + Expanding Dynamic Island -->
+                  <div class="ios-top">
+                    <span class="ios-time num">9:41</span>
+                    <div class="dynamic-island" aria-hidden="true">
+                      <span class="island-label">
+                        <span class="island-switch"></span>
+                        <span>Фокус включён</span>
+                      </span>
+                      <span class="island-lens"></span>
+                    </div>
+                    <div class="ios-indicators" aria-hidden="true">
+                      <svg width="14" height="10" viewBox="0 0 16 11">
+                        <rect x="0" y="7" width="2.6" height="4" rx="0.8"/>
+                        <rect x="4" y="5" width="2.6" height="6" rx="0.8"/>
+                        <rect x="8" y="2.5" width="2.6" height="8.5" rx="0.8"/>
+                        <rect x="12" y="0" width="2.6" height="11" rx="0.8"/>
+                      </svg>
+                      <svg width="20" height="10" viewBox="0 0 24 12">
+                        <rect x="0.75" y="0.75" width="19.5" height="10.5" rx="3" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.3"/>
+                        <rect x="2.5" y="2.5" width="14.5" height="7" rx="1.6" fill="#ffffff"/>
+                        <path d="M22 4.2v3.6a1.4 1.4 0 0 0 0-3.6z" fill="rgba(255,255,255,0.45)"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Focus Block Native Widget -->
+                  <div class="fb-widget">
+                    <div class="fb-widget-left">
+                      <span class="fb-widget-title">Focus Block</span>
+                      <span class="fb-widget-sub" id="widgetStatus">6 приложений под контролем</span>
+                    </div>
+                    <div class="fb-toggle" aria-hidden="true">
+                      <div class="fb-toggle-knob"></div>
+                    </div>
+                  </div>
+
+                  <!-- Realistic 4-col iOS Home Screen Grid -->
+                  <div class="ios-grid">
+                    <!-- Row 1: Distracting Apps (Lock on touch) -->
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-ig">
+                        <span class="ios-badge num">14</span>
+                        <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.3-2.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">Instagram</span>
+                    </div>
+
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-yt">
+                        <span class="ios-badge num">3</span>
+                        <svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9C2 8.9 2 12 2 12s0 3.1.4 4.8a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8zM10 15.2V8.8L15.4 12 10 15.2z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">YouTube</span>
+                    </div>
+
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-tg">
+                        <span class="ios-badge num">28</span>
+                        <svg viewBox="0 0 24 24"><path d="M20.7 4.6 3.5 11.2c-1.2.5-1.2 1.1-.2 1.4l4.4 1.4 10.2-6.4c.5-.3.9-.1.5.2l-8.2 7.4-.3 4.5c.4 0 .6-.2.9-.4l2.2-2.1 4.5 3.3c.8.5 1.4.2 1.6-.8l2.9-13.8c.3-1.2-.5-1.7-1.3-1.3z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">Telegram</span>
+                    </div>
+
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-tt">
+                        <span class="ios-badge num">9</span>
+                        <svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.2 4.2 0 0 1 15.5 3h-3v12.4a2.5 2.5 0 1 1-1.8-2.4V9.9a5.5 5.5 0 1 0 4.8 5.5V9.1a7.1 7.1 0 0 0 4 1.3V7.4a4.2 4.2 0 0 1-2.9-1.6z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">TikTok</span>
+                    </div>
+
+                    <!-- Row 2: 2 Distracting + 2 Essential (Notes & Calendar stay open!) -->
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-x">
+                        <svg viewBox="0 0 24 24"><path d="M18.2 3h2.9l-6.4 7.3L22 21h-5.8l-4.6-6-5.2 6H3.5l6.8-7.8L2.5 3h6l4.1 5.4L18.2 3zm-1 16.2h1.6L7.4 4.7H5.7l11.5 14.5z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">Лента</span>
+                    </div>
+
+                    <div class="ios-app is-distracting">
+                      <div class="ios-icon ic-games">
+                        <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+                        <span class="ios-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg></span>
+                      </div>
+                      <span class="ios-label">Игры</span>
+                    </div>
+
+                    <div class="ios-app">
+                      <div class="ios-icon ic-notes">
+                        <div class="ic-notes-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+                      </div>
+                      <span class="ios-label">Заметки</span>
+                    </div>
+
+                    <div class="ios-app">
+                      <div class="ios-icon ic-cal num">
+                        <span class="ic-cal-day">ПН</span>
+                        <span class="ic-cal-num">25</span>
+                      </div>
+                      <span class="ios-label">Календарь</span>
+                    </div>
+                  </div>
+
+                  <!-- Focus Block Real Shield Toast (appears when locked) -->
+                  <div class="ios-lock-toast" aria-hidden="true">
+                    <img src="/img/mark.svg" alt="" class="toast-mark" width="24" height="14">
+                    <div class="toast-text">
+                      <strong>Заблокировано</strong>
+                      <span>Вернётся, когда приложите к Focus Block</span>
+                    </div>
+                  </div>
+
+                  <!-- Essential iOS Dock (Always Unlocked) -->
+                  <div>
+                    <div class="ios-dock">
+                      <div class="ios-icon ic-phone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                      </div>
+                      <div class="ios-icon ic-maps" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                      </div>
+                      <div class="ios-icon ic-msg" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                      </div>
+                      <div class="ios-icon ic-bank" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h4v-7h-4zM2 22h20v-3H2v3zm15-12v7h3v-7h-3zm-5-9L2 6v2h20V6l-10-5z"/></svg>
+                      </div>
+                    </div>
+                    <div class="ios-home-bar" aria-hidden="true"></div>
+                  </div>
                 </div>
-                <div class="iphone-statusbar num">
-                  <span>14:20</span>
-                  <span>5G</span>
-                </div>
-                <div class="iphone-status-pill" id="iphoneStatusPill">Обычный режим</div>
-              </div>
-
-              <div>
-                <div class="iphone-apps-heading">Отвлекающее</div>
-                <div class="iphone-apps">
-                  <div class="app-cell">
-                    <span class="app-dot" aria-hidden="true"></span>
-                    <div class="app-glyph glyph-reels" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm6 3.5v5l4.5-2.5L10 9.5z"/></svg>
-                    </div>
-                    <span class="app-name">Рилсы</span>
-                    <div class="app-hourglass" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg>
-                    </div>
-                  </div>
-
-                  <div class="app-cell">
-                    <span class="app-dot" aria-hidden="true"></span>
-                    <div class="app-glyph glyph-video" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <span class="app-name">Видео</span>
-                    <div class="app-hourglass" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg>
-                    </div>
-                  </div>
-
-                  <div class="app-cell">
-                    <span class="app-dot" aria-hidden="true"></span>
-                    <div class="app-glyph glyph-feed" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg>
-                    </div>
-                    <span class="app-name">Ленты</span>
-                    <div class="app-hourglass" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg>
-                    </div>
-                  </div>
-
-                  <div class="app-cell">
-                    <div class="app-glyph glyph-games" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
-                    </div>
-                    <span class="app-name">Игры</span>
-                    <div class="app-hourglass" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5-4-4V4h8v3.5l-4 4z"/></svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div class="iphone-dock">
-                  <div class="dock-glyph dock-phone" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                  </div>
-                  <div class="dock-glyph dock-maps" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  </div>
-                  <div class="dock-glyph dock-msg" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                  </div>
-                </div>
-                <div class="iphone-dock-label">Звонки, карты и&nbsp;банки остаются открытыми</div>
               </div>
             </div>
           </div>
@@ -364,10 +419,10 @@
 
       <div class="preorder-block closing-form-wrap">
         <form class="preorder-form" onsubmit="handlePreorder(event, this)">
-          <div class="preorder-row">
+          <div class="preorder-bar">
             <label for="closing-contact" class="sr-only">Telegram или электронная почта</label>
-            <input id="closing-contact" type="text" name="contact" class="preorder-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false">
-            <button type="submit" class="preorder-btn">Получить скидку 20%</button>
+            <input id="closing-contact" type="text" name="contact" class="preorder-input" placeholder="Telegram @username или почта" required autocomplete="email" spellcheck="false" enterkeyhint="send">
+            <button type="submit" class="preorder-btn">Получить −20%</button>
           </div>
           <label class="consent-row">
             <input type="checkbox" name="consent" required>
@@ -404,92 +459,126 @@
 </footer>
 
 <script>
-  // Subtle scroll rotation on Hero Focus Block
+  // Unified Hero Scroll-Driven Animation: Dark Titanium iPhone taps Focus Block
   (() => {
-    const img = document.querySelector(".hero-product-img");
-    const stage = document.querySelector(".hero-stage");
-    if (!img || !stage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      const r = stage.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, (window.innerHeight - r.top) / (window.innerHeight + r.height)));
-      img.style.setProperty("--scroll-rotation", `${(progress - 0.5) * 14}deg`);
-    };
-    const schedule = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
-    };
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule, { passive: true });
-    update();
-  })();
-
-  // Scroll-Driven Dark iPhone -> Focus Block Touch Choreography
-  (() => {
-    const track = document.querySelector(".scroll-story");
-    const stage = document.getElementById("scrollStage");
-    const phone = document.getElementById("storyIphone");
-    const pill = document.getElementById("iphoneStatusPill");
-    const steps = Array.from(document.querySelectorAll(".scroll-step"));
-    if (!track || !stage || !phone) return;
+    const track = document.getElementById("heroTrack");
+    const visual = document.getElementById("heroVisual");
+    const rig = document.getElementById("iphoneRig");
+    const widgetStatus = document.getElementById("widgetStatus");
+    const scrollText = document.getElementById("heroScrollText");
+    if (!track || !visual || !rig) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let locked = false;
+    let manualOverride = null;
+    let raf = 0;
+
+    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+
+    const setLockedState = (next, triggerPulse) => {
+      if (next === locked) return;
+      locked = next;
+      track.classList.toggle("is-locked", locked);
+      if (widgetStatus) {
+        widgetStatus.textContent = locked ? "Фокус активен — 6 приложений закрыто" : "6 приложений под контролем";
+      }
+      if (scrollText) {
+        scrollText.textContent = locked
+          ? "Фокус включён — соцсети и лишние приложения закрыты до следующего касания"
+          : "Прокрутите вниз — посмотрите, как телефон блокирует лишнее у блока";
+      }
+      if (locked && triggerPulse) {
+        visual.classList.remove("pulse-active");
+        void visual.offsetWidth;
+        visual.classList.add("pulse-active");
+      }
+    };
+
     if (reduced) {
-      stage.classList.add("is-locked");
-      if (pill) pill.textContent = "Фокус включён";
+      setLockedState(true, false);
       return;
     }
 
-    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    let wasLocked = false;
-    let raf = 0;
-
     const render = () => {
       raf = 0;
-      const rect = track.getBoundingClientRect();
-      const total = Math.max(1, track.offsetHeight - window.innerHeight);
-      const p = Math.max(0, Math.min(1, -rect.top / total));
+      const isDesktop = window.innerWidth > 1020;
 
-      const isMobile = window.innerWidth <= 680;
-      const maxX = isMobile ? 64 : 112;
-      const maxY = isMobile ? -42 : -62;
-      const maxRot = isMobile ? 11 : 13;
+      let p = 0;
+      if (isDesktop) {
+        const rect = track.getBoundingClientRect();
+        const scrollable = Math.max(1, track.offsetHeight - window.innerHeight);
+        p = Math.max(0, Math.min(1, -rect.top / scrollable));
+      } else {
+        const vRect = visual.getBoundingClientRect();
+        const start = window.innerHeight * 0.78;
+        const end = window.innerHeight * 0.12;
+        p = Math.max(0, Math.min(1, (start - vRect.top) / Math.max(1, start - end)));
+      }
+
+      if (manualOverride !== null && p < 0.08) {
+        return;
+      }
+      if (p >= 0.08) {
+        manualOverride = null;
+      }
+
+      const maxX = isDesktop ? 104 : 62;
+      const maxY = isDesktop ? -52 : -34;
+      const maxRot = isDesktop ? 11 : 10;
 
       let k = 0;
-      if (p < 0.48) {
-        // Approach the Focus Block
-        k = easeInOut(p / 0.48);
+      if (p < 0.44) {
+        k = easeInOut(p / 0.44);
       } else if (p < 0.64) {
-        // Hold contact at the block
         k = 1;
       } else {
-        // Smooth pullback to show locked screen
         k = 1 - easeInOut((p - 0.64) / 0.36);
       }
 
-      phone.style.setProperty("--phone-x", `${(maxX * k).toFixed(1)}px`);
-      phone.style.setProperty("--phone-y", `${(maxY * k).toFixed(1)}px`);
-      phone.style.setProperty("--phone-rot", `${(maxRot * k).toFixed(2)}deg`);
+      const ry = -7 * (1 - k);
+      const rx = 3 * (1 - k);
 
-      const locked = p >= 0.48;
-      if (locked !== wasLocked) {
-        wasLocked = locked;
-        stage.classList.toggle("is-locked", locked);
-        if (pill) pill.textContent = locked ? "Фокус включён" : "Обычный режим";
-        if (locked) {
-          stage.classList.remove("pulse-active");
-          void stage.offsetWidth;
-          stage.classList.add("pulse-active");
-        }
-      }
+      rig.style.setProperty("--px", `${(maxX * k).toFixed(1)}px`);
+      rig.style.setProperty("--py", `${(maxY * k).toFixed(1)}px`);
+      rig.style.setProperty("--pr", `${(maxRot * k).toFixed(2)}deg`);
+      rig.style.setProperty("--pry", `${ry.toFixed(2)}deg`);
+      rig.style.setProperty("--prx", `${rx.toFixed(2)}deg`);
 
-      const activeIdx = p < 0.42 ? 0 : (p < 0.72 ? 1 : 2);
-      steps.forEach((el, idx) => el.classList.toggle("is-active", idx === activeIdx));
+      setLockedState(p >= 0.44, true);
     };
 
     const schedule = () => {
       if (!raf) raf = window.requestAnimationFrame(render);
+    };
+
+    window.manualToggleLock = () => {
+      const targetLocked = !locked;
+      manualOverride = targetLocked;
+      const isDesktop = window.innerWidth > 1020;
+      const maxX = isDesktop ? 104 : 62;
+      const maxY = isDesktop ? -52 : -34;
+
+      rig.style.transition = "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)";
+      rig.style.setProperty("--px", `${maxX}px`);
+      rig.style.setProperty("--py", `${maxY}px`);
+      rig.style.setProperty("--pr", "11deg");
+      rig.style.setProperty("--pry", "0deg");
+      rig.style.setProperty("--prx", "0deg");
+
+      setTimeout(() => {
+        setLockedState(targetLocked, true);
+      }, 420);
+
+      setTimeout(() => {
+        rig.style.setProperty("--px", "0px");
+        rig.style.setProperty("--py", "0px");
+        rig.style.setProperty("--pr", "0deg");
+        rig.style.setProperty("--pry", "-7deg");
+        rig.style.setProperty("--prx", "3deg");
+        setTimeout(() => {
+          rig.style.transition = "";
+        }, 560);
+      }, 920);
     };
 
     window.addEventListener("scroll", schedule, { passive: true });
@@ -525,10 +614,10 @@
       localStorage.setItem("focusblock_waitlist", JSON.stringify(list));
     } catch (_) {}
 
-    const row = form.querySelector(".preorder-row");
+    const bar = form.querySelector(".preorder-bar");
     const consent = form.querySelector(".consent-row");
     const success = form.querySelector(".form-success");
-    if (row) row.style.display = "none";
+    if (bar) bar.style.display = "none";
     if (consent) consent.style.display = "none";
     if (success) success.style.display = "block";
   }
