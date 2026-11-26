@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Скачать Focus Block — iOS и Android</title>
+<meta name="description" content="Бесплатное приложение Focus Block для iPhone (iOS 17+) и Android (8.0+ с NFC).">
+<meta name="theme-color" content="#0b0c0e">
+<meta name="apple-itunes-app" content="app-id=6819272894">
+<link rel="icon" href="/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .downloads { display: grid; gap: 12px; margin: 28px 0; }
+  .dl-btn { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--hairline); text-decoration: none; color: var(--primary); }
+  .dl-btn.primary { background: var(--paper); color: var(--base); border-color: transparent; }
+  .dl-btn.primary .sub { color: rgba(11, 12, 14, 0.62); }
+  .dl-btn.disabled { opacity: 0.55; pointer-events: none; }
+  .dl-btn b { display: block; font-size: 17px; font-weight: 600; }
+  .dl-btn .sub { display: block; font-size: 13px; color: var(--secondary); margin-top: 2px; }
+  .dl-btn .tag { font-size: 13px; font-weight: 600; opacity: 0.72; }
+</style>
+</head>
+<body>
+<header class="top wrap"><a href="/"><img src="/img/logo.svg" alt="Focus Block"></a></header>
+<main class="wrap" style="padding-top:24px">
+  <img class="mark" src="/img/mark.svg" alt="" style="margin-left:0;width:68px;margin-bottom:20px">
+  <h1>Приложение Focus Block</h1>
+  <p class="lead">Бесплатное приложение для работы с физическим блоком. Без подписок и аккаунтов.</p>
+
+  <div class="downloads" id="downloads">
+    <a class="dl-btn primary" id="btn-ios" href="https://apps.apple.com/app/id6819272894">
+      <div><b>App Store</b><span class="sub">Для iPhone · iOS 17 или новее</span></div>
+      <span class="tag">Скачать</span>
+    </a>
+    <a class="dl-btn disabled" id="btn-rustore" href="#rustore">
+      <div><b>RuStore</b><span class="sub">Для Android · Android 8.0+ с NFC</span></div>
+      <span class="tag">Скоро</span>
+    </a>
+    <a class="dl-btn disabled" id="btn-gplay" href="#google-play">
+      <div><b>Google Play</b><span class="sub">Для Android · Android 8.0+ с NFC</span></div>
+      <span class="tag">Скоро</span>
+    </a>
+    <a class="dl-btn disabled" id="btn-apk" href="#apk">
+      <div><b>Скачать APK напрямую</b><span class="sub">Официальная сборка Focus Block для Android</span></div>
+      <span class="tag">Скоро</span>
+    </a>
+  </div>
+
+  <p class="small">После установки откройте приложение, выберите отвлекающие программы и приложите телефон к Focus Block.</p>
+</main>
+<script>
+  (function () {
+    var ua = navigator.userAgent || "";
+    var isAndroid = /Android/i.test(ua);
+    var list = document.getElementById("downloads");
+    if (isAndroid) {
+      var rustore = document.getElementById("btn-rustore");
+      var gplay = document.getElementById("btn-gplay");
+      var apk = document.getElementById("btn-apk");
+      document.getElementById("btn-ios").classList.remove("primary");
+      if (!rustore.classList.contains("disabled")) {
+        rustore.classList.add("primary");
+      }
+      list.insertBefore(apk, list.firstChild);
+      list.insertBefore(gplay, list.firstChild);
+      list.insertBefore(rustore, list.firstChild);
+    }
+  })();
+</script>
+<footer class="wrap"><a href="/support/">Поддержка</a><a href="/privacy/">Конфиденциальность</a><p class="small">© 2026 Focus Block</p></footer>
+</body></html>
